@@ -1,7 +1,8 @@
 baseURL = 'https://uuuuff.github.io/'
 languageCode = 'ja-jp'
-title = 'UU日記'
+title = '備忘録屋'
 theme = 'hyde'
 publishDir = "docs"
 [params]
+  description = "IT関連の備忘録と日記を書いていく予定です"
   text_color = "green"
