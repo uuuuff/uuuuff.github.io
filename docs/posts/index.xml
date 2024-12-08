@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on UU日記</title>
-    <link>https://example.org/posts/</link>
+    <link>https://uuuuff.github.io/docs/posts/</link>
     <description>Recent content in Posts on UU日記</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sun, 08 Dec 2024 12:15:51 +0900</lastBuildDate>
-    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://uuuuff.github.io/docs/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linuxで特定のサイトへのアクセスを禁止する方法</title>
-      <link>https://example.org/posts/my-first-post/</link>
+      <link>https://uuuuff.github.io/docs/posts/my-first-post/</link>
       <pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate>
-      <guid>https://example.org/posts/my-first-post/</guid>
+      <guid>https://uuuuff.github.io/docs/posts/my-first-post/</guid>
       <description>&lt;p&gt;タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法&#xA;を紹介していきます。&lt;br&gt;&#xA;Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します&lt;/p&gt;</description>
     </item>
   </channel>
