@@ -1,186 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-jp" lang="ja-jp">
+<head>
+  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.139.3">
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Linuxで特定のサイトへのアクセスを禁止する方法 | UU日記</title>
-<meta name="keywords" content="">
-<meta name="description" content="タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法
-を紹介していきます。
-Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します">
-<meta name="author" content="">
-<link rel="canonical" href="https://uuuuff.github.io/docs/posts/my-first-post/">
-<link crossorigin="anonymous" href="https://uuuuff.github.io/docs/docs/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://uuuuff.github.io/docs/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://uuuuff.github.io/docs/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://uuuuff.github.io/docs/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://uuuuff.github.io/docs/apple-touch-icon.png">
-<link rel="mask-icon" href="https://uuuuff.github.io/docs/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://uuuuff.github.io/docs/posts/my-first-post/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
+  <title>Linuxで特定のサイトへのアクセスを禁止する方法 &middot; UU日記</title>
+  <meta name="description" content="" />
 
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript><meta property="og:url" content="https://uuuuff.github.io/docs/posts/my-first-post/">
-  <meta property="og:site_name" content="UU日記">
-  <meta property="og:title" content="Linuxで特定のサイトへのアクセスを禁止する方法">
-  <meta property="og:description" content="タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法 を紹介していきます。
-Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します">
-  <meta property="og:locale" content="ja-jp">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-08T12:15:51+09:00">
-    <meta property="article:modified_time" content="2024-12-08T12:15:51+09:00">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linuxで特定のサイトへのアクセスを禁止する方法">
-<meta name="twitter:description" content="タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法
-を紹介していきます。
-Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します">
+  
+  <link type="text/css" rel="stylesheet" href="https://uuuuff.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://uuuuff.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://uuuuff.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://uuuuff.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://uuuuff.github.io/docs/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Linuxで特定のサイトへのアクセスを禁止する方法",
-      "item": "https://uuuuff.github.io/docs/posts/my-first-post/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Linuxで特定のサイトへのアクセスを禁止する方法",
-  "name": "Linuxで特定のサイトへのアクセスを禁止する方法",
-  "description": "タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法 を紹介していきます。\nLinuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法 を紹介していきます。\nLinuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します\n/etc/hosts IPアドレス ドメイン名\nIPアドレスに0.0.0.0を設定すれば、そのドメインへのアクセスを禁止することができます。\n例えば、以下のように記述するとwww.example.com にアクセスしようとしてもアドレスが 0.0.0.0 に変換されてアクセスできなくなります。\n0.0.0.0 www.example.com\nまた、#以降の文はコメントとして認識されます:\n# 0.0.0.0 www.thisisComment.com\n注意点 /etc/hostsにもともと記述されていた内容は消さないようにすること この方法は特定のファイルへのアクセスを禁止することはできないこと。例えば、以下のようにはできません: 0.0.0.0 www.example.com/file ublock origin などを使えばいいと思う人もいるかもしれませんが、 この方法ではブラウザ以外のソフト(ターミナルとか)でも、反映されるので便利です。\n",
-  "wordCount" : "26",
-  "inLanguage": "en",
-  "datePublished": "2024-12-08T12:15:51+09:00",
-  "dateModified": "2024-12-08T12:15:51+09:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://uuuuff.github.io/docs/posts/my-first-post/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "UU日記",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://uuuuff.github.io/docs/favicon.ico"
-    }
-  }
-}
-</script>
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://uuuuff.github.io/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="https://uuuuff.github.io/favicon.png">
+
+  
+  
 </head>
 
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://uuuuff.github.io/"><h1>UU日記</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
 
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://uuuuff.github.io/docs/" accesskey="h" title="UU日記 (Alt + H)">UU日記</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-        </ul>
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://uuuuff.github.io/">Home</a> </li>
+        
+      </ul>
     </nav>
-</header>
-<main class="main">
 
-<article class="post-single">
-  <header class="post-header">
-    
-    <h1 class="post-title entry-hint-parent">
-      Linuxで特定のサイトへのアクセスを禁止する方法
-    </h1>
-    <div class="post-meta"><span title='2024-12-08 12:15:51 +0900 JST'>December 8, 2024</span>
+    <p>&copy; 2024. All rights reserved. </p>
+  </div>
+</aside>
 
-</div>
-  </header> 
-  <div class="post-content"><p>タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法
+    <main class="content container">
+    <div class="post">
+  <h1>Linuxで特定のサイトへのアクセスを禁止する方法</h1>
+  <time datetime=2024-12-08T12:15:51&#43;0900 class="post-date">Sun, Dec 8, 2024</time>
+  <p>タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法
 を紹介していきます。<br>
 Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します</p>
 <p><em>/etc/hosts</em>
@@ -190,7 +62,7 @@ Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名�
 <em>0.0.0.0 <a href="https://www.example.com">www.example.com</a></em></p>
 <p>また、#以降の文はコメントとして認識されます:<br>
 <em># 0.0.0.0 <a href="https://www.thisisComment.com">www.thisisComment.com</a></em></p>
-<h3 id="注意点">注意点<a hidden class="anchor" aria-hidden="true" href="#注意点">#</a></h3>
+<h3 id="注意点">注意点</h3>
 <ul>
 <li>/etc/hostsにもともと記述されていた内容は消さないようにすること</li>
 <li>この方法は特定のファイルへのアクセスを禁止することはできないこと。例えば、以下のようにはできません: <br>
@@ -198,85 +70,13 @@ Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名�
 </ul>
 <p>ublock origin などを使えばいいと思う人もいるかもしれませんが、
 この方法ではブラウザ以外のソフト(ターミナルとか)でも、反映されるので便利です。</p>
+</div>
 
-  </div>
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
-</article>
     </main>
+
     
-<footer class="footer">
-        <span>&copy; 2024 <a href="https://uuuuff.github.io/docs/">UU日記</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
+      
+    
+  </body>
 </html>

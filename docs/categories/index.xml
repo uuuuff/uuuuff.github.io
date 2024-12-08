@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on UU日記</title>
-    <link>https://uuuuff.github.io/docs/categories/</link>
+    <link>https://uuuuff.github.io/categories/</link>
     <description>Recent content in Categories on UU日記</description>
-    <generator>Hugo -- 0.139.3</generator>
+    <generator>Hugo</generator>
     <language>ja-jp</language>
-    <atom:link href="https://uuuuff.github.io/docs/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://uuuuff.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
