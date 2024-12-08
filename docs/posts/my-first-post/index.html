@@ -5,9 +5,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-MWQSJBW2G4');
 </script><p>タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法
-を紹介していきます。<br>Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します</p><p><em>/etc/hosts</em>
-<em>IPアドレス ドメイン名</em></p><p>IPアドレスに0.0.0.0を設定すれば、そのドメインへのアクセスを禁止することができます。</p><p>例えば、以下のように記述するとwww.example.com にアクセスしようとしてもアドレスが 0.0.0.0 に変換されてアクセスできなくなります。<br><em>0.0.0.0 <a href=https://www.example.com>www.example.com</a></em></p><p>また、#以降の文はコメントとして認識されます:<br><em># 0.0.0.0 this.is.comment</em></p><h3 id=注意点>注意点</h3><ul><li>/etc/hostsにもともと記述されていた内容は消さないようにすること</li><li>この方法は特定のファイルへのアクセスを禁止することはできないこと。例えば、以下のようにはできません:<br><em>0.0.0.0 <a href=https://www.example.com/file>www.example.com/file</a></em></li></ul><p>ublock origin などを使えばいいと思う人もいるかもしれませんが、
+を紹介していきます。<br>Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します</p><p><em>IPアドレス ドメイン名</em></p><p>IPアドレスに0.0.0.0を設定すれば、そのドメインへのアクセスを禁止することができます。</p><p>例えば、以下のように記述するとwww.example.com にアクセスしようとしてもアドレスが 0.0.0.0 に変換されてアクセスできなくなります。<br><em>0.0.0.0 <a href=https://www.example.com>www.example.com</a></em></p><p>また、#以降の文はコメントとして認識されます:<br><em># 0.0.0.0 this.is.comment</em></p><h3 id=注意点>注意点</h3><ul><li>/etc/hostsにもともと記述されていた内容は消さないようにすること</li><li>この方法は特定のファイルへのアクセスを禁止することはできないこと。例えば、以下のようにはできません:<br><em>0.0.0.0 <a href=https://www.example.com/file>www.example.com/file</a></em></li></ul><p>ublock origin などを使えばいいと思う人もいるかもしれませんが、
 この方法ではブラウザ以外のソフト(ターミナルとか)でも、反映されるので便利です。</p></div></main></body></html>
