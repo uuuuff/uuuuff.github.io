@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on UU日記</title>
-    <link>https://uuuuff.github.io/tags/</link>
-    <description>Recent content in Tags on UU日記</description>
-    <generator>Hugo</generator>
-    <language>ja-jp</language>
-    <atom:link href="https://uuuuff.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on 備忘録屋</title><link>https://uuuuff.github.io/tags/</link><description>Recent content in Tags on 備忘録屋</description><generator>Hugo</generator><language>ja-jp</language><atom:link href="https://uuuuff.github.io/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
