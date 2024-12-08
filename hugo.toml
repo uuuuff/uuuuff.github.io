@@ -1,7 +1,7 @@
 baseURL = 'https://uuuuff.github.io/docs/'
 languageCode = 'ja-jp'
 title = 'UU日記'
-theme = 'ananke'
+theme = 'PaperMod'
 publishDir = "docs"
 canonifyurls = true
 [params]

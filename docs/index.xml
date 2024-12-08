@@ -1,3 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UU日記</title><link>https://uuuuff.github.io/docs/</link><description>Recent content on UU日記</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Sun, 08 Dec 2024 12:15:51 +0900</lastBuildDate><atom:link href="https://uuuuff.github.io/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Linuxで特定のサイトへのアクセスを禁止する方法</title><link>https://uuuuff.github.io/docs/posts/my-first-post/</link><pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate><guid>https://uuuuff.github.io/docs/posts/my-first-post/</guid><description>&lt;p>タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法
-を紹介していきます。&lt;br>
-Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>UU日記</title>
+    <link>https://uuuuff.github.io/docs/</link>
+    <description>Recent content on UU日記</description>
+    <generator>Hugo -- 0.139.3</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sun, 08 Dec 2024 12:15:51 +0900</lastBuildDate>
+    <atom:link href="https://uuuuff.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linuxで特定のサイトへのアクセスを禁止する方法</title>
+      <link>https://uuuuff.github.io/docs/posts/my-first-post/</link>
+      <pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate>
+      <guid>https://uuuuff.github.io/docs/posts/my-first-post/</guid>
+      <description>&lt;p&gt;タイトルのとおり、Linuxで特定サイトへのアクセスを禁止する方法
+を紹介していきます。&lt;br&gt;
+Linuxには/etc/hostsというファイルがあります。/etc/hostsはの名前解決の設定をできるファイルで、以下のような文法で記述します&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
