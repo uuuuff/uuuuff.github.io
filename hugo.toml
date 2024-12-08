@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'ja-jp'
+title = 'My New Hugo Site'
+theme = 'ananke'
