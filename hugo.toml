@@ -1,7 +1,8 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://uuuuff.github.io/docs/'
 languageCode = 'ja-jp'
 title = 'UU日記'
 theme = 'ananke'
-
+publishDir = "docs"
+canonifyurls = true
 [params]
   text_color = "green"
