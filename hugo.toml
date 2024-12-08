@@ -1,4 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'ja-jp'
-title = 'My New Hugo Site'
+title = 'UU日記'
 theme = 'ananke'
+
+[params]
+  text_color = "green"
