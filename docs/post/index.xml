@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 備忘録屋</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on 備忘録屋</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 09 Dec 2024 09:11:22 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「Nitterはまだ使える?」 2024/12月 Twitter をログインなしで閲覧する。</title>
+      <link>http://localhost:1313/post/nitter/</link>
+      <pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate>
+      <guid>http://localhost:1313/post/nitter/</guid>
+      <description>&lt;p&gt;こんにちは。&lt;br&gt;&#xA;Nitter は今でも使えるのか? そもそも Nitter とはなんなのか?&lt;br&gt;&#xA;今回はそんな疑問を記事にしました。&lt;/p&gt;&#xA;&lt;h2 id=&#34;nitterとは&#34;&gt;Nitterとは?&lt;/h2&gt;&#xA;&lt;p&gt;Nitter は 2019年 から開発が始まった、ログイン不要で、広告やトラッカーが存在しないフリーかつオープソースの Twitter ビューアーです。2024/2月 Twitter の仕様変更などの理由により約5年続いた Nitter プロジェクトの開発が終了しました。&lt;/p&gt;&#xA;&lt;h2 id=&#34;今でも使えるのか&#34;&gt;今でも使えるのか&lt;/h2&gt;&#xA;&lt;p&gt;現在、Nitter インスタンスのほとんどが動かない状況です。&#xA;それでも、安定的に動いてくれるインスタンス、&lt;/p&gt;&#xA;&lt;h3 id=&#34;nitterpoastorg&#34;&gt;nitter.poast.org&lt;/h3&gt;&#xA;&lt;p&gt;があります。非常にレスポンスが良く、ほとんどエラーを吐くこともありません。一つ注意点としては、ブラウザの認証のために javascript と クッキー が必要となることです。&lt;/p&gt;&#xA;&lt;p&gt;他にも動くインスタンスはありますが、不安定でまともに使えないものばかりなので今は nitter.poast.org を使うのが一番と思います。&#xA;ちなみに、 nitter インスタンスのサーバーの動作状況を確認できる status.d420.deというサイトがあります。  これを見ると上述の通り、ほとんどのサーバーが不安定、もしくは動作不能な状態になっていることがわかりますね。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
