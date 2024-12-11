@@ -1,7 +1,9 @@
 baseURL = 'https://uuuuff.github.io/'
 languageCode = 'ja-jp'
-title = '備忘録屋'
-theme = 'hyde'
+title = "Rui Nakata's HOMEPAGE"
+theme = 'paper'
 publishDir = 'docs'
 [params]
-  description = "書きたいことを気ままに書きます。IT関連多め。"
+  color = 'gray'
+  rss = true
+  github = 'https://nakatarui.github.io'
