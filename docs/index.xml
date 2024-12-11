@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rui Nakata's HOMEPAGE</title><link>https://uuuuff.github.io/</link><description>Recent content on Rui Nakata's HOMEPAGE</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Wed, 11 Dec 2024 20:51:15 +0900</lastBuildDate><atom:link href="https://uuuuff.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title><link>https://uuuuff.github.io/posts/decompress-commands/</link><pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate><guid>https://uuuuff.github.io/posts/decompress-commands/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rui Nakata's HOMEPAGE</title><link>https://nakatarui.github.io/</link><description>Recent content on Rui Nakata's HOMEPAGE</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Wed, 11 Dec 2024 20:51:15 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title><link>https://nakatarui.github.io/posts/decompress-commands/</link><pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate><guid>https://nakatarui.github.io/posts/decompress-commands/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
 &lt;p>どれもよくつかうファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br>
 展開方法のみ書きましたので詳細なつかい方はmanをみてください。&lt;/p>
 &lt;h2 id="目次">目次&lt;/h2>
@@ -24,8 +24,8 @@ $ unxz archive.xz
 $ gunzip archive.gzip
 &lt;/code>&lt;/pre>&lt;h2 id="bzip2">bzip2&lt;/h2>
 &lt;pre tabindex="0">&lt;code>$ bzip2 -d archive.bz2
-&lt;/code>&lt;/pre></description></item><item><title>「Nitter」は今でも使えるの？2024/12月</title><link>https://uuuuff.github.io/posts/nitter/</link><pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate><guid>https://uuuuff.github.io/posts/nitter/</guid><description>&lt;p>こんにちは。&lt;br>
+&lt;/code>&lt;/pre></description></item><item><title>「Nitter」は今でも使えるの？2024/12月</title><link>https://nakatarui.github.io/posts/nitter/</link><pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate><guid>https://nakatarui.github.io/posts/nitter/</guid><description>&lt;p>こんにちは。&lt;br>
 Nitterはまだ使えるのか? そもそもNitterとは何なのか?&lt;br>
-まとめました。&lt;/p></description></item><item><title>Linuxで特定のサイトへのアクセスを禁止する方法</title><link>https://uuuuff.github.io/posts/my-first-post/</link><pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate><guid>https://uuuuff.github.io/posts/my-first-post/</guid><description>&lt;p>今回はLinuxで特定サイトへのアクセスを禁止する方法
+まとめました。&lt;/p></description></item><item><title>Linuxで特定のサイトへのアクセスを禁止する方法</title><link>https://nakatarui.github.io/posts/my-first-post/</link><pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate><guid>https://nakatarui.github.io/posts/my-first-post/</guid><description>&lt;p>今回はLinuxで特定サイトへのアクセスを禁止する方法
 を紹介していきます。&lt;br>
 Linuxには&lt;code>/etc/hosts&lt;/code>というファイルがあります。&lt;code>/etc/hosts&lt;/code>は名前解決の設定をできるファイルで、&lt;/p></description></item></channel></rss>
