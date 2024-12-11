@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Rui Nakata's HOMEPAGE</title><link>https://nakatarui.github.io/posts/</link><description>Recent content in Posts on Rui Nakata's HOMEPAGE</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Wed, 11 Dec 2024 20:51:15 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title><link>https://nakatarui.github.io/posts/decompress-commands/</link><pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate><guid>https://nakatarui.github.io/posts/decompress-commands/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
-&lt;p>どれもよくつかうファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br>
-展開方法のみ書きましたので詳細なつかい方はmanをみてください。&lt;/p>
+&lt;p>どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br>
+展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p>
 &lt;h2 id="目次">目次&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="#tar">tar&lt;/a>&lt;/li>
