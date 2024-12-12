@@ -1,6 +1,6 @@
 baseURL = 'https://nakatarui.github.io/'
 languageCode = 'ja-jp'
-title = "Rui Nakata's HOMEPAGE"
+title = "Rui Nakata's HomePage"
 theme = 'paper'
 publishDir = 'docs'
 [params]
