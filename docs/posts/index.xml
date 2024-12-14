@@ -1,40 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Rui Nakata&#39;s HomePage</title>
-    <link>http://localhost:44537/posts/</link>
-    <description>Recent content in Posts on Rui Nakata&#39;s HomePage</description>
-    <generator>Hugo</generator>
-    <language>ja-jp</language>
-    <lastBuildDate>Sat, 14 Dec 2024 21:49:10 +0900</lastBuildDate>
-    <atom:link href="http://localhost:44537/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>mkdirで作ったディレクトリに、素早くcdする</title>
-      <link>http://localhost:44537/posts/mkdir-cd/</link>
-      <pubDate>Sat, 14 Dec 2024 21:49:10 +0900</pubDate>
-      <guid>http://localhost:44537/posts/mkdir-cd/</guid>
-      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;p&gt;mkdirしたディレクトリに即座に移動したいとき、どうしてますか?&#xA;今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。&lt;/p&gt;&#xA;&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;OS     Debian 12&lt;/li&gt;&#xA;&lt;li&gt;Shell  bash 5&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;本題&#34;&gt;本題&lt;/h2&gt;&#xA;&lt;p&gt;では、早速本題のコマンドを見ていきましょう。　　&#xA;以下がコマンド例です。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ mkdir test.d;cd $_&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;解説&#34;&gt;解説&lt;/h2&gt;&#xA;&lt;p&gt;コマンドを左から順をおって解説していきます。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;mkdir test.d&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;これはそのままの意味です。&lt;code&gt;test.d&lt;/code&gt;というディレクトリを作ります。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;;&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;;&lt;/code&gt;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行できます。&#xA;上の場合、mkdirの実行結果に関わらず、cdを実行します。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;cd $_&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;bashでは&lt;code&gt;$_&lt;/code&gt;は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、&lt;code&gt;$_&lt;/code&gt;には&lt;code&gt;test.d&lt;/code&gt;が入ります。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;&#xA;&lt;p&gt;bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title>
-      <link>http://localhost:44537/posts/decompress-commands/</link>
-      <pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate>
-      <guid>http://localhost:44537/posts/decompress-commands/</guid>
-      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;p&gt;どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br&gt;&#xA;展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p&gt;&#xA;&lt;h2 id=&#34;目次&#34;&gt;目次&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#tar&#34;&gt;tar&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#xz&#34;&gt;xz&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#zip&#34;&gt;zip&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#gzip&#34;&gt;gzip&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#bzip2&#34;&gt;bzip2&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;tar&#34;&gt;tar&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;xz&#34;&gt;xz&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ xz -d archive.xz  # -d はdecompress(展開の意味)の頭文字&#xA;または&#xA;$ unxz archive.xz&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;zip&#34;&gt;zip&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ unzip archive.zip&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;gzip&#34;&gt;gzip&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ gzip -d archive.gzip&#xA;または&#xA;$ gunzip archive.gzip&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bzip2&#34;&gt;bzip2&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ bzip2 -d archive.bz2&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    <item>
-      <title>「Nitter」は今でも使えるの？2024/12月</title>
-      <link>http://localhost:44537/posts/nitter/</link>
-      <pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate>
-      <guid>http://localhost:44537/posts/nitter/</guid>
-      <description>&lt;p&gt;こんにちは。&lt;br&gt;&#xA;Nitterはまだ使えるのか? そもそもNitterとは何なのか?&lt;br&gt;&#xA;まとめました。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linuxで特定のサイトへのアクセスを禁止する方法</title>
-      <link>http://localhost:44537/posts/hosts/</link>
-      <pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate>
-      <guid>http://localhost:44537/posts/hosts/</guid>
-      <description>&lt;p&gt;今回はLinuxで特定サイトへのアクセスを禁止する方法&#xA;を紹介していきます。&lt;br&gt;&#xA;Linuxには&lt;code&gt;/etc/hosts&lt;/code&gt;というファイルがあります。&lt;code&gt;/etc/hosts&lt;/code&gt;は名前解決の設定をできるファイルで、&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Rui Nakata's HomePage</title><link>https://nakatarui.github.io/posts/</link><description>Recent content in Posts on Rui Nakata's HomePage</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Sat, 14 Dec 2024 21:49:10 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>mkdirで作ったディレクトリに、素早くcdする</title><link>https://nakatarui.github.io/posts/mkdir-cd/</link><pubDate>Sat, 14 Dec 2024 21:49:10 +0900</pubDate><guid>https://nakatarui.github.io/posts/mkdir-cd/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
+&lt;p>mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
+今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。&lt;/p>
+&lt;h2 id="環境">環境&lt;/h2>
+&lt;ul>
+&lt;li>OS Debian 12&lt;/li>
+&lt;li>Shell bash 5&lt;/li>
+&lt;/ul>
+&lt;h2 id="本題">本題&lt;/h2>
+&lt;p>では、早速本題のコマンドを見ていきましょう。　　
+以下がコマンド例です。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ mkdir test.d;cd $_
+&lt;/code>&lt;/pre>&lt;h2 id="解説">解説&lt;/h2>
+&lt;p>コマンドを左から順をおって解説していきます。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>mkdir test.d&lt;/code>
+&lt;ul>
+&lt;li>これはそのままの意味です。&lt;code>test.d&lt;/code>というディレクトリを作ります。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>;&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>;&lt;/code>はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行できます。
+上の場合、mkdirの実行結果に関わらず、cdを実行します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>cd $_&lt;/code>
+&lt;ul>
+&lt;li>bashでは&lt;code>$_&lt;/code>は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、&lt;code>$_&lt;/code>には&lt;code>test.d&lt;/code>が入ります。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="まとめ">まとめ&lt;/h2>
+&lt;p>bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。&lt;/p></description></item><item><title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title><link>https://nakatarui.github.io/posts/decompress-commands/</link><pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate><guid>https://nakatarui.github.io/posts/decompress-commands/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
+&lt;p>どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br>
+展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p>
+&lt;h2 id="目次">目次&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#tar">tar&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#xz">xz&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#zip">zip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#gzip">gzip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bzip2">bzip2&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="tar">tar&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする
+&lt;/code>&lt;/pre>&lt;h2 id="xz">xz&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ xz -d archive.xz # -d はdecompress(展開の意味)の頭文字
+または
+$ unxz archive.xz
+&lt;/code>&lt;/pre>&lt;h2 id="zip">zip&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ unzip archive.zip
+&lt;/code>&lt;/pre>&lt;h2 id="gzip">gzip&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ gzip -d archive.gzip
+または
+$ gunzip archive.gzip
+&lt;/code>&lt;/pre>&lt;h2 id="bzip2">bzip2&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ bzip2 -d archive.bz2
+&lt;/code>&lt;/pre></description></item><item><title>「Nitter」は今でも使えるの？2024/12月</title><link>https://nakatarui.github.io/posts/nitter/</link><pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate><guid>https://nakatarui.github.io/posts/nitter/</guid><description>&lt;p>こんにちは。&lt;br>
+Nitterはまだ使えるのか? そもそもNitterとは何なのか?&lt;br>
+まとめました。&lt;/p></description></item><item><title>Linuxで特定のサイトへのアクセスを禁止する方法</title><link>https://nakatarui.github.io/posts/hosts/</link><pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate><guid>https://nakatarui.github.io/posts/hosts/</guid><description>&lt;p>今回はLinuxで特定サイトへのアクセスを禁止する方法
+を紹介していきます。&lt;br>
+Linuxには&lt;code>/etc/hosts&lt;/code>というファイルがあります。&lt;code>/etc/hosts&lt;/code>は名前解決の設定をできるファイルで、&lt;/p></description></item></channel></rss>
