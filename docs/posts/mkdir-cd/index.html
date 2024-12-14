@@ -51,7 +51,7 @@
   />
 
   
-  <title>Tags - Rui Nakata&#39;s HomePage</title>
+  <title>mkdirで作ったディレクトリに、素早くcdする - Rui Nakata&#39;s HomePage</title>
 
   
   <meta name="theme-color" />
@@ -60,11 +60,40 @@
   
   
   
-  
-  <meta
-    name="description"
-    content="A personal blog"
-  />
+  <meta name="description" content="はじめに
+mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
+今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。
+環境
+
+OS     Debian 12
+Shell  bash 5
+
+本題
+では、早速本題のコマンドを見ていきましょう。　　
+以下がコマンド例です。
+$ mkdir test.d;cd $_
+解説
+コマンドを左から順をおって解説していきます。
+
+mkdir test.d
+
+これはそのままの意味です。test.dというディレクトリを作ります。
+
+
+;
+
+;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行できます。
+上の場合、mkdirの実行結果に関わらず、cdを実行します。
+
+
+cd $_
+
+bashでは$_は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、$_にはtest.dが入ります。
+
+
+
+まとめ
+bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。" />
   <meta name="author" content="Rui Nakata&#39;s HomePage" />
   
 
@@ -98,6 +127,12 @@
   
 
   
+  
+  <script
+    defer
+    src="http://localhost:44537/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
   
 
   
@@ -228,20 +263,89 @@
     >
       
 
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">mkdirで作ったディレクトリに、素早くcdする</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Dec 14, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="はじめに">はじめに</h2>
+<p>mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
+今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。</p>
+<h2 id="環境">環境</h2>
+<ul>
+<li>OS     Debian 12</li>
+<li>Shell  bash 5</li>
+</ul>
+<h2 id="本題">本題</h2>
+<p>では、早速本題のコマンドを見ていきましょう。　　
+以下がコマンド例です。</p>
+<pre tabindex="0"><code>$ mkdir test.d;cd $_
+</code></pre><h2 id="解説">解説</h2>
+<p>コマンドを左から順をおって解説していきます。</p>
+<ul>
+<li><code>mkdir test.d</code>
+<ul>
+<li>これはそのままの意味です。<code>test.d</code>というディレクトリを作ります。</li>
+</ul>
+</li>
+<li><code>;</code>
+<ul>
+<li><code>;</code>はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行できます。
+上の場合、mkdirの実行結果に関わらず、cdを実行します。</li>
+</ul>
+</li>
+<li><code>cd $_</code>
+<ul>
+<li>bashでは<code>$_</code>は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、<code>$_</code>には<code>test.d</code>が入ります。</li>
+</ul>
+</li>
+</ul>
+<h2 id="まとめ">まとめ</h2>
+<p>bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:44537/posts/decompress-commands/"
+      ><span>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
 
 
-<h1 class="mb-14">#Tags</h1>
-
-
-
-
-
-
-
- 
-
-
-
+  
+</article>
 
 
     </main>

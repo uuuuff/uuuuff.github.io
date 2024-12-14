@@ -6,4 +6,4 @@ publishDir = 'docs'
 [params]
   color = 'gray'
   rss = true
-  github = 'https://nakatarui.github.io'
+  github = 'https://github.com/nakatarui'

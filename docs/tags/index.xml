@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Rui Nakata's HomePage</title><link>https://nakatarui.github.io/tags/</link><description>Recent content in Tags on Rui Nakata's HomePage</description><generator>Hugo</generator><language>ja-jp</language><atom:link href="https://nakatarui.github.io/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Rui Nakata&#39;s HomePage</title>
+    <link>http://localhost:44537/tags/</link>
+    <description>Recent content in Tags on Rui Nakata&#39;s HomePage</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <atom:link href="http://localhost:44537/tags/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
