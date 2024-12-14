@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rui Nakata's HomePage</title><link>https://nakatarui.github.io/</link><description>Recent content on Rui Nakata's HomePage</description><generator>Hugo</generator><language>ja-jp</language><lastBuildDate>Sat, 14 Dec 2024 21:49:10 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>mkdirで作ったディレクトリに、素早くcdする</title><link>https://nakatarui.github.io/posts/mkdir-cd/</link><pubDate>Sat, 14 Dec 2024 21:49:10 +0900</pubDate><guid>https://nakatarui.github.io/posts/mkdir-cd/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
-&lt;p>mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
+&lt;p>mkdirしたディレクトリに即座に移動したいとき、どうしてますか?&lt;br>
 今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。&lt;/p>
 &lt;h2 id="環境">環境&lt;/h2>
 &lt;ul>
-&lt;li>OS Debian 12&lt;/li>
-&lt;li>Shell bash 5&lt;/li>
+&lt;li>Debian 12&lt;/li>
+&lt;li>bash 5&lt;/li>
 &lt;/ul>
 &lt;h2 id="本題">本題&lt;/h2>
-&lt;p>では、早速本題のコマンドを見ていきましょう。　　
+&lt;p>では、早速本題のコマンドを見ていきましょう。&lt;br>
 以下がコマンド例です。&lt;/p>
 &lt;pre tabindex="0">&lt;code>$ mkdir test.d;cd $_
-&lt;/code>&lt;/pre>&lt;h2 id="解説">解説&lt;/h2>
-&lt;p>コマンドを左から順をおって解説していきます。&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>&lt;code>test.d&lt;/code>を&lt;code>mkdir&lt;/code>し、&lt;code>enter&lt;/code>もせず、記号&lt;code>;&lt;/code>を挟んですぐに&lt;code>cd&lt;/code>していますね。&lt;br>
+後に解説しますが、&lt;code>;&lt;/code>を使うことで改行することなく、更に&lt;code>$_&lt;/code>を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。&lt;/p>
+&lt;h2 id="解説">解説&lt;/h2>
+&lt;p>左から順に、コマンドごとに解説していきます。&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>mkdir test.d&lt;/code>
 &lt;ul>
@@ -20,18 +22,23 @@
 &lt;/li>
 &lt;li>&lt;code>;&lt;/code>
 &lt;ul>
-&lt;li>&lt;code>;&lt;/code>はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行できます。
+&lt;li>&lt;code>;&lt;/code>はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。
 上の場合、mkdirの実行結果に関わらず、cdを実行します。&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;code>cd $_&lt;/code>
 &lt;ul>
-&lt;li>bashでは&lt;code>$_&lt;/code>は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、&lt;code>$_&lt;/code>には&lt;code>test.d&lt;/code>が入ります。&lt;/li>
+&lt;li>bashでは&lt;code>$_&lt;/code>は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、&lt;code>$_&lt;/code>は&lt;code>test.d&lt;/code>に展開されます。&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="まとめ">まとめ&lt;/h2>
-&lt;p>bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。&lt;/p></description></item><item><title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title><link>https://nakatarui.github.io/posts/decompress-commands/</link><pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate><guid>https://nakatarui.github.io/posts/decompress-commands/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
+&lt;hr>
+&lt;h2 id="所感">所感&lt;/h2>
+&lt;p>bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。&lt;/p>
+&lt;p>参考:&lt;/p>
+&lt;ul>
+&lt;li>man&lt;/li>
+&lt;/ul></description></item><item><title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title><link>https://nakatarui.github.io/posts/decompress-commands/</link><pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate><guid>https://nakatarui.github.io/posts/decompress-commands/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
 &lt;p>どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br>
 展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p>
 &lt;h2 id="目次">目次&lt;/h2>
