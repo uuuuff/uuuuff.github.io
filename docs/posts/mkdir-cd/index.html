@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=32967&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
-<title>mkdirで作ったディレクトリに、素早くcdする | Rui Nakata&#39;s HomePage</title>
-<meta name="keywords" content="">
-<meta name="description" content="はじめに
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>mkdirで作ったディレクトリに、素早くcdする | Rui Nakata's HomePage</title>
+<meta name=keywords content><meta name=description content="はじめに
 mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
 今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。
 環境
@@ -47,233 +39,59 @@ bashには色々な特殊変数や演算子があります。それらを駆使�
 参考:
 
 man
-">
-<meta name="author" content="">
-<link rel="canonical" href="http://localhost:32967/posts/mkdir-cd/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:32967/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:32967/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:32967/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:32967/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:32967/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:32967/posts/mkdir-cd/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+"><meta name=author content><link rel=canonical href=https://nakatarui.github.io/posts/mkdir-cd/><link crossorigin=anonymous href=/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as=style><link rel=icon href=https://nakatarui.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://nakatarui.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://nakatarui.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://nakatarui.github.io/apple-touch-icon.png><link rel=mask-icon href=https://nakatarui.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://nakatarui.github.io/posts/mkdir-cd/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://nakatarui.github.io/posts/mkdir-cd/"><meta property="og:site_name" content="Rui Nakata's HomePage"><meta property="og:title" content="mkdirで作ったディレクトリに、素早くcdする"><meta property="og:description" content="はじめに mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
+今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。
+環境 Debian 12 bash 5 本題 では、早速本題のコマンドを見ていきましょう。
+以下がコマンド例です。
+$ mkdir test.d;cd $_ test.dをmkdirし、enterもせず、記号;を挟んですぐにcdしていますね。
+後に解説しますが、;を使うことで改行することなく、更に$_を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。
+解説 左から順に、コマンドごとに解説していきます。
+mkdir test.d これはそのままの意味です。test.dというディレクトリを作ります。 ; ;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。 上の場合、mkdirの実行結果に関わらず、cdを実行します。 cd $_ bashでは$_は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、$_はtest.dに展開されます。 所感 bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。
+参考:
+man "><meta property="og:locale" content="ja-jp"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-12-14T21:49:10+09:00"><meta property="article:modified_time" content="2024-12-14T21:49:10+09:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="mkdirで作ったディレクトリに、素早くcdする"><meta name=twitter:description content="はじめに
+mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
+今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。
+環境
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
+Debian 12
+bash 5
 
-            .list {
-                background: var(--theme);
-            }
+本題
+では、早速本題のコマンドを見ていきましょう。
+以下がコマンド例です。
+$ mkdir test.d;cd $_
+test.dをmkdirし、enterもせず、記号;を挟んですぐにcdしていますね。
+後に解説しますが、;を使うことで改行することなく、更に$_を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。
+解説
+左から順に、コマンドごとに解説していきます。
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
+mkdir test.d
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-</head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="http://localhost:32967/" accesskey="h" title="Rui Nakata&#39;s HomePage (Alt + H)">Rui Nakata&#39;s HomePage</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    
-    <h1 class="post-title entry-hint-parent">
-      mkdirで作ったディレクトリに、素早くcdする
-    </h1>
-    <div class="post-meta"><span title='2024-12-14 21:49:10 +0900 JST'>December 14, 2024</span>
-
-</div>
-  </header> 
-  <div class="post-content"><h2 id="はじめに">はじめに<a hidden class="anchor" aria-hidden="true" href="#はじめに">#</a></h2>
-<p>mkdirしたディレクトリに即座に移動したいとき、どうしてますか?<br>
-今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。</p>
-<h2 id="環境">環境<a hidden class="anchor" aria-hidden="true" href="#環境">#</a></h2>
-<ul>
-<li>Debian 12</li>
-<li>bash 5</li>
-</ul>
-<h2 id="本題">本題<a hidden class="anchor" aria-hidden="true" href="#本題">#</a></h2>
-<p>では、早速本題のコマンドを見ていきましょう。<br>
-以下がコマンド例です。</p>
-<pre tabindex="0"><code>$ mkdir test.d;cd $_
-</code></pre><p><code>test.d</code>を<code>mkdir</code>し、<code>enter</code>もせず、記号<code>;</code>を挟んですぐに<code>cd</code>していますね。<br>
-後に解説しますが、<code>;</code>を使うことで改行することなく、更に<code>$_</code>を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。</p>
-<h2 id="解説">解説<a hidden class="anchor" aria-hidden="true" href="#解説">#</a></h2>
-<p>左から順に、コマンドごとに解説していきます。</p>
-<ul>
-<li><code>mkdir test.d</code>
-<ul>
-<li>これはそのままの意味です。<code>test.d</code>というディレクトリを作ります。</li>
-</ul>
-</li>
-<li><code>;</code>
-<ul>
-<li><code>;</code>はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。
-上の場合、mkdirの実行結果に関わらず、cdを実行します。</li>
-</ul>
-</li>
-<li><code>cd $_</code>
-<ul>
-<li>bashでは<code>$_</code>は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、<code>$_</code>は<code>test.d</code>に展開されます。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="所感">所感<a hidden class="anchor" aria-hidden="true" href="#所感">#</a></h2>
-<p>bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。</p>
-<p>参考:</p>
-<ul>
-<li>man</li>
-</ul>
+これはそのままの意味です。test.dというディレクトリを作ります。
 
 
-  </div>
+;
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
-</article>
-    </main>
-    
-<footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:32967/">Rui Nakata&#39;s HomePage</a></span> · 
+;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。
+上の場合、mkdirの実行結果に関わらず、cdを実行します。
 
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
-</footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
 
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
+cd $_
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
+bashでは$_は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、$_はtest.dに展開されます。
 
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
 
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
-</script>
-</body>
 
-</html>
+所感
+bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。
+参考:
+
+man
+"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://nakatarui.github.io/posts/"},{"@type":"ListItem","position":2,"name":"mkdirで作ったディレクトリに、素早くcdする","item":"https://nakatarui.github.io/posts/mkdir-cd/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"mkdirで作ったディレクトリに、素早くcdする","name":"mkdirで作ったディレクトリに、素早くcdする","description":"はじめに mkdirしたディレクトリに即座に移動したいとき、どうしてますか?\n今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。\n環境 Debian 12 bash 5 本題 では、早速本題のコマンドを見ていきましょう。\n以下がコマンド例です。\n$ mkdir test.d;cd $_ test.dをmkdirし、enterもせず、記号;を挟んですぐにcdしていますね。\n後に解説しますが、;を使うことで改行することなく、更に$_を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。\n解説 左から順に、コマンドごとに解説していきます。\nmkdir test.d これはそのままの意味です。test.dというディレクトリを作ります。 ; ;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。 上の場合、mkdirの実行結果に関わらず、cdを実行します。 cd $_ bashでは$_は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、$_はtest.dに展開されます。 所感 bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。\n参考:\nman ","keywords":[],"articleBody":"はじめに mkdirしたディレクトリに即座に移動したいとき、どうしてますか?\n今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。\n環境 Debian 12 bash 5 本題 では、早速本題のコマンドを見ていきましょう。\n以下がコマンド例です。\n$ mkdir test.d;cd $_ test.dをmkdirし、enterもせず、記号;を挟んですぐにcdしていますね。\n後に解説しますが、;を使うことで改行することなく、更に$_を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。\n解説 左から順に、コマンドごとに解説していきます。\nmkdir test.d これはそのままの意味です。test.dというディレクトリを作ります。 ; ;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。 上の場合、mkdirの実行結果に関わらず、cdを実行します。 cd $_ bashでは$_は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、$_はtest.dに展開されます。 所感 bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。\n参考:\nman ","wordCount":"32","inLanguage":"en","datePublished":"2024-12-14T21:49:10+09:00","dateModified":"2024-12-14T21:49:10+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://nakatarui.github.io/posts/mkdir-cd/"},"publisher":{"@type":"Organization","name":"Rui Nakata's HomePage","logo":{"@type":"ImageObject","url":"https://nakatarui.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://nakatarui.github.io/ accesskey=h title="Rui Nakata's HomePage (Alt + H)">Rui Nakata's HomePage</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">mkdirで作ったディレクトリに、素早くcdする</h1><div class=post-meta><span title='2024-12-14 21:49:10 +0900 JST'>December 14, 2024</span></div></header><div class=post-content><h2 id=はじめに>はじめに<a hidden class=anchor aria-hidden=true href=#はじめに>#</a></h2><p>mkdirしたディレクトリに即座に移動したいとき、どうしてますか?<br>今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。</p><h2 id=環境>環境<a hidden class=anchor aria-hidden=true href=#環境>#</a></h2><ul><li>Debian 12</li><li>bash 5</li></ul><h2 id=本題>本題<a hidden class=anchor aria-hidden=true href=#本題>#</a></h2><p>では、早速本題のコマンドを見ていきましょう。<br>以下がコマンド例です。</p><pre tabindex=0><code>$ mkdir test.d;cd $_
+</code></pre><p><code>test.d</code>を<code>mkdir</code>し、<code>enter</code>もせず、記号<code>;</code>を挟んですぐに<code>cd</code>していますね。<br>後に解説しますが、<code>;</code>を使うことで改行することなく、更に<code>$_</code>を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。</p><h2 id=解説>解説<a hidden class=anchor aria-hidden=true href=#解説>#</a></h2><p>左から順に、コマンドごとに解説していきます。</p><ul><li><code>mkdir test.d</code><ul><li>これはそのままの意味です。<code>test.d</code>というディレクトリを作ります。</li></ul></li><li><code>;</code><ul><li><code>;</code>はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。
+上の場合、mkdirの実行結果に関わらず、cdを実行します。</li></ul></li><li><code>cd $_</code><ul><li>bashでは<code>$_</code>は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、<code>$_</code>は<code>test.d</code>に展開されます。</li></ul></li></ul><hr><h2 id=所感>所感<a hidden class=anchor aria-hidden=true href=#所感>#</a></h2><p>bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。</p><p>参考:</p><ul><li>man</li></ul></div><footer class=post-footer><ul class=post-tags></ul></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://nakatarui.github.io/>Rui Nakata's HomePage</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
