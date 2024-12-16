@@ -1,0 +1,17 @@
+baseURL: 'https://nakatarui.github.io/'
+languageCode: 'ja-jp'
+title: "Rui Nakata's HomePage"
+theme: 'PaperMod'
+publishDir: 'docs'
+[params]
+assets:
+  disableFingerprinting: true
+menu:
+  main:
+    - identifier: categories
+    name: Linux
+    url: /categories/Linux/
+    weight: 10
+    - identifier: Github
+    url: https://github.com/nakatarui/
+    weight: 30

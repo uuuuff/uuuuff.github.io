@@ -1,9 +1,7 @@
 baseURL = 'https://nakatarui.github.io/'
 languageCode = 'ja-jp'
 title = "Rui Nakata's HomePage"
-theme = 'paper'
+theme = 'PaperMod'
 publishDir = 'docs'
 [params]
-  color = 'gray'
-  rss = true
   github = 'https://github.com/nakatarui'
