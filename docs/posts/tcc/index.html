@@ -5,37 +5,62 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法 | Rui Nakata&#39;s HomePage</title>
+<title>超高速なコンパイラ「tcc」 | Rui Nakata&#39;s HomePage</title>
 <meta name="keywords" content="">
 <meta name="description" content="はじめに
-どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。
-展開方法のみ書きましたので詳しい使い方はmanをみてください。
+tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。
+今回はそんなtccの特徴や簡単な使い方などを紹介します。
 目次
 
-tar
-xz
-zip
-gzip
-bzip2
+特徴
+欠点
+インストール方法
+使用例
+まとめ
 
+特徴
 
-tar
-$ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする
-xz
-$ xz -d archive.xz  # -d はdecompress(展開の意味)の頭文字
-または
-$ unxz archive.xz
-zip
-$ unzip archive.zip
-gzip
-$ gzip -d archive.gzip
-または
-$ gunzip archive.gzip
-bzip2
-$ bzip2 -d archive.bz2
+非常に小さく、高速。
+開発者のベラールさんによるとコンパイル速度はgccよりも9倍高速であるそうです。
+ 
+gccに似た操作ができる。
+tccのオプションはgccに非常に似ているのでgccに慣れている方でも使いやすいです。
+ 
+独自の便利な機能がある。
+tccにはコードのコンパイルと同時に実行する機能があります。これについては後で触れます。
+ 
+
+欠点
+tccはgccでするような(-Oオプションなどの)コンパイルの最適化ができないことが欠点というか、少し残念なポイントですね。
+性能よりもコンパイラの小ささに重点をおいているためです。
+とはいっても、現代のパソコンは高速なので普通使う上ではほとんど気にならないと思います。
+インストール方法
+debian/debian派生osでのインストール方法です。
+$ sudo apt install tcc
+公式リポジトリに配布されているのでaptで楽々インストールできます。
+また、試していないので分かりませんがarchlinuxでも公式リポジトリに配布されているのでpacmanを使えばインストールできると思われます。
+使用例
+gccとほとんど同じなので書く必要もないかもしれませんが。
+ 
+コンパイルしてa.outを作る。
+$ tcc test.c
+アウトプットファイルを指定したいときは-oオプション
+$ tcc test.c -o test
+厳格にエラーをチェックするようにするには
+$ tcc test.c -W
+コンパイル時に同時に実行する(tcc独自の機能)
+$ tcc -run test.c # a.outは作成されない
+まとめ
+今回はtccの紹介でした。
+小さいだけでなく独自機能も搭載してるすごいやつです。
+ぜひ一度試してみてください。
+参考:
+
+man
+https://ja.m.wikipedia.org/wiki/Tiny_C_Compiler
 ">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:32967/categories/linux/decompress-commands/">
+<link rel="canonical" href="http://localhost:32967/posts/tcc/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:32967/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:32967/favicon-16x16.png">
@@ -44,7 +69,7 @@ $ bzip2 -d archive.bz2
 <link rel="mask-icon" href="http://localhost:32967/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:32967/categories/linux/decompress-commands/">
+<link rel="alternate" hreflang="en" href="http://localhost:32967/posts/tcc/">
 <noscript>
     <style>
         #theme-toggle,
@@ -133,39 +158,65 @@ $ bzip2 -d archive.bz2
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法
+      超高速なコンパイラ「tcc」
     </h1>
-    <div class="post-meta"><span title='2024-12-11 20:51:15 +0900 JST'>December 11, 2024</span>
+    <div class="post-meta"><span title='2024-12-16 21:35:37 +0900 JST'>December 16, 2024</span>
 
 </div>
   </header> 
   <div class="post-content"><h2 id="はじめに">はじめに<a hidden class="anchor" aria-hidden="true" href="#はじめに">#</a></h2>
-<p>どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。<br>
-展開方法のみ書きましたので詳しい使い方はmanをみてください。</p>
+<p>tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。<br>
+今回はそんなtccの特徴や簡単な使い方などを紹介します。</p>
 <h2 id="目次">目次<a hidden class="anchor" aria-hidden="true" href="#目次">#</a></h2>
 <ul>
-<li><a href="#tar">tar</a></li>
-<li><a href="#xz">xz</a></li>
-<li><a href="#zip">zip</a></li>
-<li><a href="#gzip">gzip</a></li>
-<li><a href="#bzip2">bzip2</a></li>
+<li><a href="#%E7%89%B9%E5%BE%B4">特徴</a></li>
+<li><a href="#%E6%AC%A0%E7%82%B9">欠点</a></li>
+<li><a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95">インストール方法</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E4%BE%8B">使用例</a></li>
+<li><a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ</a></li>
 </ul>
-<hr>
-<h2 id="tar">tar<a hidden class="anchor" aria-hidden="true" href="#tar">#</a></h2>
-<pre tabindex="0"><code>$ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする
-</code></pre><h2 id="xz">xz<a hidden class="anchor" aria-hidden="true" href="#xz">#</a></h2>
-<pre tabindex="0"><code>$ xz -d archive.xz  # -d はdecompress(展開の意味)の頭文字
-または
-$ unxz archive.xz
-</code></pre><h2 id="zip">zip<a hidden class="anchor" aria-hidden="true" href="#zip">#</a></h2>
-<pre tabindex="0"><code>$ unzip archive.zip
-</code></pre><h2 id="gzip">gzip<a hidden class="anchor" aria-hidden="true" href="#gzip">#</a></h2>
-<pre tabindex="0"><code>$ gzip -d archive.gzip
-または
-$ gunzip archive.gzip
-</code></pre><h2 id="bzip2">bzip2<a hidden class="anchor" aria-hidden="true" href="#bzip2">#</a></h2>
-<pre tabindex="0"><code>$ bzip2 -d archive.bz2
-</code></pre>
+<h2 id="特徴">特徴<a hidden class="anchor" aria-hidden="true" href="#特徴">#</a></h2>
+<ul>
+<li>非常に小さく、高速。<br>
+開発者のベラールさんによるとコンパイル速度はgccよりも9倍高速であるそうです。<br>
+ </li>
+<li>gccに似た操作ができる。<br>
+tccのオプションはgccに非常に似ているのでgccに慣れている方でも使いやすいです。<br>
+ </li>
+<li>独自の便利な機能がある。<br>
+tccにはコードのコンパイルと同時に実行する機能があります。これについては後で触れます。
+ </li>
+</ul>
+<h2 id="欠点">欠点<a hidden class="anchor" aria-hidden="true" href="#欠点">#</a></h2>
+<p>tccはgccでするような(-Oオプションなどの)コンパイルの最適化ができないことが欠点というか、少し残念なポイントですね。</p>
+<p>性能よりもコンパイラの小ささに重点をおいているためです。</p>
+<p>とはいっても、現代のパソコンは高速なので普通使う上ではほとんど気にならないと思います。</p>
+<h2 id="インストール方法">インストール方法<a hidden class="anchor" aria-hidden="true" href="#インストール方法">#</a></h2>
+<p>debian/debian派生osでのインストール方法です。</p>
+<pre tabindex="0"><code>$ sudo apt install tcc
+</code></pre><p>公式リポジトリに配布されているので<code>apt</code>で楽々インストールできます。</p>
+<p>また、試していないので分かりませんがarchlinuxでも公式リポジトリに配布されているので<code>pacman</code>を使えばインストールできると思われます。</p>
+<h2 id="使用例">使用例<a hidden class="anchor" aria-hidden="true" href="#使用例">#</a></h2>
+<p>gccとほとんど同じなので書く必要もないかもしれませんが。<br>
+ </p>
+<h4 id="コンパイルしてaoutを作る">コンパイルして<code>a.out</code>を作る。<a hidden class="anchor" aria-hidden="true" href="#コンパイルしてaoutを作る">#</a></h4>
+<pre tabindex="0"><code>$ tcc test.c
+</code></pre><h4 id="アウトプットファイルを指定したいときは-oオプション">アウトプットファイルを指定したいときは<code>-o</code>オプション<a hidden class="anchor" aria-hidden="true" href="#アウトプットファイルを指定したいときは-oオプション">#</a></h4>
+<pre tabindex="0"><code>$ tcc test.c -o test
+</code></pre><h4 id="厳格にエラーをチェックするようにするには">厳格にエラーをチェックするようにするには<a hidden class="anchor" aria-hidden="true" href="#厳格にエラーをチェックするようにするには">#</a></h4>
+<pre tabindex="0"><code>$ tcc test.c -W
+</code></pre><h4 id="コンパイル時に同時に実行するtcc独自の機能">コンパイル時に同時に実行する(tcc独自の機能)<a hidden class="anchor" aria-hidden="true" href="#コンパイル時に同時に実行するtcc独自の機能">#</a></h4>
+<pre tabindex="0"><code>$ tcc -run test.c # a.outは作成されない
+</code></pre><h2 id="まとめ">まとめ<a hidden class="anchor" aria-hidden="true" href="#まとめ">#</a></h2>
+<p>今回はtccの紹介でした。<br>
+小さいだけでなく独自機能も搭載してるすごいやつです。<br>
+ぜひ一度試してみてください。</p>
+<h3 id="参考">参考:<a hidden class="anchor" aria-hidden="true" href="#参考">#</a></h3>
+<ul>
+<li>man</li>
+<li><a href="https://ja.m.wikipedia.org/wiki/Tiny_C_Compiler">https://ja.m.wikipedia.org/wiki/Tiny_C_Compiler</a></li>
+</ul>
+
 
   </div>
 
