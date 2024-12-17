@@ -1,30 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Rui Nakata's HomePage</title><link>https://nakatarui.github.io/posts/</link><description>Recent content in Posts on Rui Nakata's HomePage</description><generator>Hugo -- 0.139.4</generator><language>ja-jp</language><lastBuildDate>Mon, 16 Dec 2024 21:35:37 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>超高速なコンパイラ「tcc」</title><link>https://nakatarui.github.io/posts/tcc/</link><pubDate>Mon, 16 Dec 2024 21:35:37 +0900</pubDate><guid>https://nakatarui.github.io/posts/tcc/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
-&lt;p>tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。&lt;br>
-今回はそんなtccの特徴や簡単な使い方などを紹介します。&lt;/p>
-&lt;h2 id="目次">目次&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Rui Nakata's HomePage</title><link>https://nakatarui.github.io/posts/</link><description>Recent content in Posts on Rui Nakata's HomePage</description><generator>Hugo -- 0.139.4</generator><language>ja-jp</language><lastBuildDate>Mon, 16 Dec 2024 21:35:37 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>超高速なコンパイラ「tcc」</title><link>https://nakatarui.github.io/posts/tcc/</link><pubDate>Mon, 16 Dec 2024 21:35:37 +0900</pubDate><guid>https://nakatarui.github.io/posts/tcc/</guid><description>&lt;h2 id="目次">目次&lt;/h2>
 &lt;ul>
+&lt;li>&lt;a href="#tcc%E3%81%A8%E3%81%AF">tccとは&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E7%89%B9%E5%BE%B4">特徴&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E6%AC%A0%E7%82%B9">欠点&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95">インストール方法&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E4%BD%BF%E7%94%A8%E4%BE%8B">使用例&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ&lt;/a>&lt;/li>
 &lt;/ul>
+&lt;h2 id="tccとは">tccとは&lt;/h2>
+&lt;p>&lt;img alt="tcc-runs-on-linux" loading="lazy" src="https://nakatarui.github.io/images/tcc-on-linux.png">&lt;/p>
+&lt;p> 
+tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。&lt;/p>
+&lt;p>2001年にファブリス・ベラールさんが&lt;a href="https://ja.m.wikipedia.org/wiki/IOCCC" title="wikipedia:IOCCC">IOCCC&lt;/a>に発表したコードが原型になっています。その後、機能を拡張したものが現在のtccです。&lt;/p>
 &lt;h2 id="特徴">特徴&lt;/h2>
 &lt;ul>
 &lt;li>非常に小さく、高速。&lt;br>
-開発者のベラールさんによるとコンパイル速度はgccよりも9倍高速であるそうです。&lt;br>
+開発者のベラールさんによるとtccのコンパイル速度はgccよりも9倍高速であるそうです。&lt;br>
  &lt;/li>
-&lt;li>gccに似た操作ができる。&lt;br>
+&lt;li>オプションがgccに似ている。&lt;br>
 tccのオプションはgccに非常に似ているのでgccに慣れている方でも使いやすいです。&lt;br>
  &lt;/li>
-&lt;li>独自の便利な機能がある。&lt;br>
-tccにはコードのコンパイルと同時に実行する機能があります。これについては後で触れます。
+&lt;li>独自の機能がある。&lt;br>
+tccにはコードのコンパイルと同時に実行する機能があります。これについては後にも触れます。
  &lt;/li>
 &lt;/ul>
 &lt;h2 id="欠点">欠点&lt;/h2>
 &lt;p>tccはgccでするような(-Oオプションなどの)コンパイルの最適化ができないことが欠点というか、少し残念なポイントですね。&lt;/p>
 &lt;p>性能よりもコンパイラの小ささに重点をおいているためです。&lt;/p>
-&lt;p>とはいっても、現代のパソコンは高速なので普通使う上ではほとんど気にならないと思います。&lt;/p>
+&lt;p>とはいっても、現代のパソコンは高速なので最適化ができなくて困ることはほとんどないと思います。&lt;/p>
 &lt;h2 id="インストール方法">インストール方法&lt;/h2>
 &lt;p>debian/debian派生osでのインストール方法です。&lt;/p>
 &lt;pre tabindex="0">&lt;code>$ sudo apt install tcc
@@ -42,9 +45,8 @@ tccにはコードのコンパイルと同時に実行する機能がありま�
 &lt;/code>&lt;/pre>&lt;h4 id="コンパイル時に同時に実行するtcc独自の機能">コンパイル時に同時に実行する(tcc独自の機能)&lt;/h4>
 &lt;pre tabindex="0">&lt;code>$ tcc -run test.c # a.outは作成されない
 &lt;/code>&lt;/pre>&lt;h2 id="まとめ">まとめ&lt;/h2>
-&lt;p>今回はtccの紹介でした。&lt;br>
-小さいだけでなく独自機能も搭載してるすごいやつです。&lt;br>
-ぜひ一度試してみてください。&lt;/p>
+&lt;p>今回はtccの紹介でした。&lt;/p>
+&lt;p>他のコンパイラと比べて驚くほど早いのでぜひ一度試してみてください。&lt;/p>
 &lt;h3 id="参考">参考:&lt;/h3>
 &lt;ul>
 &lt;li>man&lt;/li>
