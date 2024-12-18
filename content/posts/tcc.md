@@ -27,8 +27,8 @@ tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコン�
 - オプションがgccに似ている。  
 tccのオプションはgccに非常に似ているのでgccに慣れている方でも使いやすいです。  
 &nbsp;
-- 独自の機能がある。  
-tccにはコードのコンパイルと同時に実行する機能があります。これについては後にも触れます。
+- [JITコンパイラ](https://ja.m.wikipedia.org/wiki/実行時コンパイラ)としても使える。  
+オプションをつけることでコンパイルと同時に実行することができます。  これについては後にも触れます。
 &nbsp;
 ## 欠点
 tccはgccでするような(-Oオプションなどの)コンパイルの最適化ができないことが欠点というか、少し残念なポイントですね。  
@@ -55,13 +55,13 @@ $ tcc test.c
 ```
 #### アウトプットファイルを指定したいときは`-o`オプション
 ```
-$ tcc test.c -o test
+$ tcc test.c -o test # test が作成される
 ```
 #### 厳格にエラーをチェックするようにするには
 ```
 $ tcc test.c -W
 ```
-#### コンパイル時に同時に実行する(tcc独自の機能)
+#### コンパイル時に同時に実行する(JITコンパイル)
 ```
 $ tcc -run test.c # a.outは作成されない
 ```
@@ -73,4 +73,4 @@ $ tcc -run test.c # a.outは作成されない
 
 ### 参考:
 - man
-- <https://ja.m.wikipedia.org/wiki/Tiny_C_Compiler>
+- [Wikipedia](https://ja.m.wikipedia.org/wiki/Tiny_C_Compiler)
