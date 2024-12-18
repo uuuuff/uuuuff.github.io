@@ -14,6 +14,12 @@ params:
   ShowBreadCrumbs: true
   disableSpecial1stPost: false
   env: production
-  googleAnalyticsID: <G-YPJGNCF242>
+  googleAnalyticsID: G-YPJGNCF242
 assets:
   favicon: ""
+menu:
+  main:
+     - identifier: SNS
+       name: Github
+       url: https://github.com/nakatarui
+       weight: 10

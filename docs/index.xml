@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>BI BO RO KU room</title>
-    <link>https://nakatarui.github.io/</link>
+    <link>http://localhost:39925/</link>
     <description>Recent content on BI BO RO KU room</description>
     <generator>Hugo -- 0.139.4</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 16 Dec 2024 21:35:37 +0900</lastBuildDate>
-    <atom:link href="https://nakatarui.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:39925/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>超高速なコンパイラ「tcc」</title>
-      <link>https://nakatarui.github.io/posts/tcc/</link>
+      <link>http://localhost:39925/posts/tcc/</link>
       <pubDate>Mon, 16 Dec 2024 21:35:37 +0900</pubDate>
-      <guid>https://nakatarui.github.io/posts/tcc/</guid>
+      <guid>http://localhost:39925/posts/tcc/</guid>
       <description>&lt;h2 id=&#34;目次&#34;&gt;目次&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#tcc%E3%81%A8%E3%81%AF&#34;&gt;tccとは&lt;/a&gt;&lt;/li&gt;
@@ -23,7 +23,7 @@
 &lt;li&gt;&lt;a href=&#34;#%E3%81%BE%E3%81%A8%E3%82%81&#34;&gt;まとめ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;tccとは&#34;&gt;tccとは&lt;/h2&gt;
-&lt;p&gt;&lt;img alt=&#34;tcc-runs-on-linux&#34; loading=&#34;lazy&#34; src=&#34;https://nakatarui.github.io/images/tcc-on-linux.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;tcc-runs-on-linux&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:39925/images/tcc-on-linux.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt; 
 tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。&lt;/p&gt;
 &lt;p&gt;2001年にファブリス・ベラールさんが&lt;a href=&#34;https://ja.m.wikipedia.org/wiki/IOCCC&#34; title=&#34;wikipedia:IOCCC&#34;&gt;IOCCC&lt;/a&gt;に発表したコードが原型になっています。その後、機能を拡張したものが現在のtccです。&lt;/p&gt;
@@ -70,9 +70,9 @@ tccにはコードのコンパイルと同時に実行する機能がありま�
     </item>
     <item>
       <title>mkdirで作ったディレクトリに、素早くcdする</title>
-      <link>https://nakatarui.github.io/posts/mkdir-cd/</link>
+      <link>http://localhost:39925/posts/mkdir-cd/</link>
       <pubDate>Sat, 14 Dec 2024 21:49:10 +0900</pubDate>
-      <guid>https://nakatarui.github.io/posts/mkdir-cd/</guid>
+      <guid>http://localhost:39925/posts/mkdir-cd/</guid>
       <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;mkdirしたディレクトリに即座に移動したいとき、どうしてますか?&lt;br&gt;
 今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。&lt;/p&gt;
@@ -117,9 +117,9 @@ tccにはコードのコンパイルと同時に実行する機能がありま�
     </item>
     <item>
       <title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title>
-      <link>https://nakatarui.github.io/categories/linux/decompress-commands/</link>
+      <link>http://localhost:39925/categories/linux/decompress-commands/</link>
       <pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate>
-      <guid>https://nakatarui.github.io/categories/linux/decompress-commands/</guid>
+      <guid>http://localhost:39925/categories/linux/decompress-commands/</guid>
       <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br&gt;
 展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p&gt;
@@ -150,9 +150,9 @@ $ gunzip archive.gzip
     </item>
     <item>
       <title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title>
-      <link>https://nakatarui.github.io/posts/decompress-commands/</link>
+      <link>http://localhost:39925/posts/decompress-commands/</link>
       <pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate>
-      <guid>https://nakatarui.github.io/posts/decompress-commands/</guid>
+      <guid>http://localhost:39925/posts/decompress-commands/</guid>
       <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br&gt;
 展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p&gt;
@@ -183,18 +183,18 @@ $ gunzip archive.gzip
     </item>
     <item>
       <title>「Nitter」は今でも使えるの？2024/12月</title>
-      <link>https://nakatarui.github.io/posts/nitter/</link>
+      <link>http://localhost:39925/posts/nitter/</link>
       <pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate>
-      <guid>https://nakatarui.github.io/posts/nitter/</guid>
+      <guid>http://localhost:39925/posts/nitter/</guid>
       <description>&lt;p&gt;こんにちは。&lt;br&gt;
 Nitterはまだ使えるのか? そもそもNitterとは何なのか?&lt;br&gt;
 まとめました。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linuxで特定のサイトへのアクセスを禁止する方法</title>
-      <link>https://nakatarui.github.io/posts/hosts/</link>
+      <link>http://localhost:39925/posts/hosts/</link>
       <pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate>
-      <guid>https://nakatarui.github.io/posts/hosts/</guid>
+      <guid>http://localhost:39925/posts/hosts/</guid>
       <description>&lt;p&gt;今回はLinuxで特定サイトへのアクセスを禁止する方法
 を紹介していきます。&lt;br&gt;
 Linuxには&lt;code&gt;/etc/hosts&lt;/code&gt;というファイルがあります。&lt;code&gt;/etc/hosts&lt;/code&gt;は名前解決の設定をできるファイルで、&lt;/p&gt;</description>
