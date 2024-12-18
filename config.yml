@@ -1,17 +1,19 @@
 baseURL: 'https://nakatarui.github.io/'
 languageCode: 'ja-jp'
-title: "Rui Nakata's HomePage"
+title: "BI BO RO KU room"
 theme: 'PaperMod'
 publishDir: 'docs'
-[params]
+enableRobotsTXT: false
+buildDrafts: false
+params:
+  title: "BI BO RO KU room"
+  ShowReadingTime: true
+  defaultTheme: auto # dark. light
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  disableSpecial1stPost: false
+  env: production
+  googleAnalyticsID: <G-YPJGNCF242>
 assets:
-  disableFingerprinting: true
-menu:
-  main:
-    - identifier: categories
-    name: Linux
-    url: /categories/Linux/
-    weight: 10
-    - identifier: Github
-    url: https://github.com/nakatarui/
-    weight: 30
+  favicon: ""
