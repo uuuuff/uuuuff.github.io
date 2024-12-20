@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on BI BO RO KU room</title><link>https://nakatarui.github.io/posts/</link><description>Recent content in Posts on BI BO RO KU room</description><generator>Hugo -- 0.139.4</generator><language>ja-jp</language><lastBuildDate>Mon, 16 Dec 2024 21:35:37 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>超高速なコンパイラ「tcc」</title><link>https://nakatarui.github.io/posts/tcc/</link><pubDate>Mon, 16 Dec 2024 21:35:37 +0900</pubDate><guid>https://nakatarui.github.io/posts/tcc/</guid><description>&lt;h2 id="目次">目次&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on BI BO RO KU room</title><link>https://nakatarui.github.io/posts/</link><description>Recent content in Posts on BI BO RO KU room</description><generator>Hugo -- 0.139.4</generator><language>ja-jp</language><lastBuildDate>Fri, 20 Dec 2024 15:00:29 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ls -l の出力を見やすくする</title><link>https://nakatarui.github.io/posts/ls-l/</link><pubDate>Fri, 20 Dec 2024 15:00:29 +0900</pubDate><guid>https://nakatarui.github.io/posts/ls-l/</guid><description>&lt;h2 id="ls--l-とは">ls -l とは&lt;/h2>
+&lt;p>&lt;code>ls -l&lt;/code> は&lt;code>ls&lt;/code>コマンドでよく使われる形です。&lt;code>-l&lt;/code>オプションをつけることでファイルやディレクトリの詳細な情報を出力することができます。&lt;br>
+以下は出力例です。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ ls -l
+total 20
+-rw-r--r-- 1 user user 2755 Dec 20 15:08 test1
+-rw-r--r-- 1 user user 3158 Dec 20 15:08 test2
+-rw-r--r-- 1 user user 2997 Dec 20 15:08 test3
+-rw-r--r-- 1 user user 1203 Dec 20 15:08 test4
+-rw-r--r-- 1 user user 2129 Dec 20 15:08 test5
+&lt;/code>&lt;/pre>&lt;p>各行、左から順に以下ような情報が出力されています。&lt;/p>
+&lt;ul>
+&lt;li>一番左の&lt;code>-&lt;/code>はファイルのタイプを示しています。(&lt;code>-&lt;/code>はファイルを指す)&lt;/li>
+&lt;li>パーミッション&lt;/li>
+&lt;li>ハードリンクの数(すべて&lt;code>1&lt;/code>となっている)&lt;/li>
+&lt;li>所有者名 (user)&lt;/li>
+&lt;li>所有グループ (user)&lt;/li>
+&lt;li>ファイルのサイズ(バイト単位)&lt;/li>
+&lt;li>最終更新日時&lt;/li>
+&lt;li>ファイル名&lt;/li>
+&lt;/ul>
+&lt;p>しかし、ファイルサイズの表示がバイト単位だと見にくいですね。 そこで、&lt;/p>
+&lt;h2 id="-hオプションを使う">-hオプションを使う&lt;/h2>
+&lt;p>&lt;code>ls -lh&lt;/code>とすることで人間が読みやすい(ヒューマンリーダブルな)出力をしてくれます。&lt;br>
+具体的には以下のように出力することができます。&lt;/p></description></item><item><title>超高速なコンパイラ「tcc」</title><link>https://nakatarui.github.io/posts/tcc/</link><pubDate>Mon, 16 Dec 2024 21:35:37 +0900</pubDate><guid>https://nakatarui.github.io/posts/tcc/</guid><description>&lt;h2 id="目次">目次&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="#tcc%E3%81%A8%E3%81%AF">tccとは&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#%E7%89%B9%E5%BE%B4">特徴&lt;/a>&lt;/li>
