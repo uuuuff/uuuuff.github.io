@@ -1,10 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>BI BO RO KU room</title><link>https://nakatarui.github.io/</link><description>Recent content on BI BO RO KU room</description><generator>Hugo -- 0.139.4</generator><language>ja-jp</language><lastBuildDate>Sat, 21 Dec 2024 14:22:33 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>headでランダムな大きさのファイルを作る(linux)</title><link>https://nakatarui.github.io/posts/make-random-files/</link><pubDate>Sat, 21 Dec 2024 14:22:33 +0900</pubDate><guid>https://nakatarui.github.io/posts/make-random-files/</guid><description>&lt;p>&lt;code>head&lt;/code>コマンドでランダムな大きさのファイルを作ってみます。&lt;br>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>BI BO RO KU room</title><link>https://nakatarui.github.io/</link><description>Recent content on BI BO RO KU room</description><generator>Hugo -- 0.139.4</generator><language>ja-jp</language><lastBuildDate>Sat, 21 Dec 2024 19:23:22 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>LinuxでDNSを変更する</title><link>https://nakatarui.github.io/posts/change-dns/</link><pubDate>Sat, 21 Dec 2024 19:23:22 +0900</pubDate><guid>https://nakatarui.github.io/posts/change-dns/</guid><description>&lt;h2 id="dnsを変更する">DNSを変更する&lt;/h2>
+&lt;p>Linux では&lt;code>/etc/resolv.conf&lt;/code>ファイルを使ってDNS の設定をします。&lt;br>
+&lt;code>/etc/resolv.conf&lt;/code>はテキストファイルで、下の書式の通りに記述することで設定します。&lt;/p>
+&lt;pre tabindex="0">&lt;code>nameserver DNSのipアドレス
+&lt;/code>&lt;/pre>&lt;p>例えば、DNSをGoogleの&lt;code>8.8.8.8&lt;/code>に設定したいときはこう記述します。&lt;/p>
+&lt;pre tabindex="0">&lt;code>nameserver 8.8.8.8
+&lt;/code>&lt;/pre>&lt;p>簡単ですね。&lt;/p>
+&lt;p>また、複数のDNSを設定することもできます。&lt;br>
+複数設定することで、普段使っているDNSが使えなくなっても2番目、3番目のDNSへの接続をしてくれます。&lt;br>
+ファイルの上から順にそのDNSの優先順位が変わります。&lt;/p>
+&lt;pre tabindex="0">&lt;code>nameserver 0.0.0.1 # 一番優先順位の高いDNS(普段つかう)
+nameserver 0.0.0.2 # ２番目(一番目のDNSが使えないときに使う)
+nameserver 0.0.0.3 # ３番目(1番目、2番目のDNSが使えないときに使う)
+&lt;/code>&lt;/pre>&lt;h2 id="dnsの削除">DNSの削除&lt;/h2>
+&lt;p>をしたいときは&lt;code>/etc/resolv.conf&lt;/code>を開いて削除したいDNSがある行を削除、またはその行の先頭に&lt;code>#&lt;/code>を追加してコメントにすることができます。&lt;/p>
+&lt;pre tabindex="0">&lt;code># nameserver 0.0.0.0 # この行は無視される。
+&lt;/code>&lt;/pre></description></item><item><title>headでランダムな大きさのファイルを作る(linux)</title><link>https://nakatarui.github.io/posts/make-random-files/</link><pubDate>Sat, 21 Dec 2024 14:22:33 +0900</pubDate><guid>https://nakatarui.github.io/posts/make-random-files/</guid><description>&lt;p>&lt;code>head&lt;/code>コマンドでランダムな大きさのファイルを作ってみます。&lt;br>
 &lt;code>/dev/random&lt;/code>を&lt;code>head&lt;/code>してその出力をリダイレクトします。&lt;/p>
 &lt;pre tabindex="0">&lt;code>$ head /dev/random &amp;gt; test
 &lt;/code>&lt;/pre>&lt;p>&lt;code>ls -l&lt;/code>でファイルサイズを見てみます。&lt;/p>
 &lt;pre tabindex="0">&lt;code>$ ls -l test
 -rw-r--r-- 1 user user 1920 Dec 21 14:58 test
-&lt;/code>&lt;/pre>&lt;p>しかし、大きさは本当にランダムになっているのでしょうか。&lt;br>
+&lt;/code>&lt;/pre>&lt;p>大きさは本当にランダムになっているのでしょうか。&lt;br>
 以下のワンライナーを使ってファイルを5つ作ります。&lt;/p>
 &lt;pre tabindex="0">&lt;code>$ for i in {0..4}; do touch test$i &amp;amp;&amp;amp; head /dev/random &amp;gt; $_; done
 $ ls

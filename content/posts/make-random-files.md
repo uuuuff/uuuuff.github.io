@@ -15,7 +15,7 @@ $ ls -l test
 -rw-r--r-- 1 user user 1920 Dec 21 14:58 test
 ```
 
-しかし、大きさは本当にランダムになっているのでしょうか。  
+大きさは本当にランダムになっているのでしょうか。  
 以下のワンライナーを使ってファイルを5つ作ります。  
 ```
 $ for i in {0..4}; do touch test$i && head /dev/random > $_; done
