@@ -1,244 +1,197 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on BI BO RO KU room</title>
-    <link>http://localhost:33997/posts/</link>
-    <description>Recent content in Posts on BI BO RO KU room</description>
-    <generator>Hugo -- 0.139.4</generator>
-    <language>ja-jp</language>
-    <lastBuildDate>Sat, 21 Dec 2024 14:22:33 +0900</lastBuildDate>
-    <atom:link href="http://localhost:33997/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Linux でログインシェルを変更する(chsh)</title>
-      <link>http://localhost:33997/posts/make-random-files/</link>
-      <pubDate>Sat, 21 Dec 2024 14:22:33 +0900</pubDate>
-      <guid>http://localhost:33997/posts/make-random-files/</guid>
-      <description>&lt;p&gt;今回はログインシェルを変更する方法の紹介です。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linuxでroot以外のログインを禁止する</title>
-      <link>http://localhost:33997/posts/nologin/</link>
-      <pubDate>Fri, 20 Dec 2024 18:50:02 +0900</pubDate>
-      <guid>http://localhost:33997/posts/nologin/</guid>
-      <description>&lt;h2 id=&#34;nologin5とは&#34;&gt;nologin(5)とは&lt;/h2&gt;
-&lt;p&gt;Linuxでは&lt;code&gt;/etc/nologin&lt;/code&gt;というファイルを作成することで特権ユーザー以外のログインを禁止することができます。&lt;br&gt;
-nologin(5)のmanページには次のようなことが書かれています。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;If  the  file  /etc/nologin  exists and is readable, login(1) will allow access only to
-root.  Other users will be shown the contents of this file and their logins will be re‐
-fused.  This provides a simple way of temporarily disabling all unprivileged logins.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;要約すると&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/etc/nologin&lt;/code&gt;が存在し読み取り可能な場合、login(1)はrootのみにアクセスを許可する。&lt;/li&gt;
-&lt;li&gt;他のユーザーは&lt;code&gt;/etc/nologin&lt;/code&gt;の内容を見ることができ、ログインは拒否される。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;つまり、&lt;code&gt;/etc/nologin&lt;/code&gt;を作成し読み取り権限を付与すればroot以外のログインを禁止できるということです。&lt;/p&gt;
-&lt;h2 id=&#34;実際にやってみた&#34;&gt;実際にやってみた&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;/etc/nologin&lt;/code&gt; を作って試してみました。&lt;br&gt;
-以下、やってわかったことのまとめです。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;非特権ユーザーを入力するとパスワードプロンプトが表示されるまもなくログイン拒否される。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;agetty&lt;/code&gt;などで非特権ユーザーの自動ログインを設定しているとログインできてしまう。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/etc/nologin&lt;/code&gt;に記述した内容は下のように表示される。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;login: user	# ユーザー名入力後、エンター
-only root can access this system.	# `/etc/nologin`の内容が出力される
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;root以外のログインも許可したくなったら&lt;code&gt;/etc/nologin&lt;/code&gt;を消すだけでOK&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;ファイルの作成・削除だけで機能するので簡単で良いですね。&lt;br&gt;
-ちなみに、rootのパスワードを設定していない/忘れている 人は本当にログインできなくなってしまうので注意してください。(^_-)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ls -l の出力を見やすくする</title>
-      <link>http://localhost:33997/posts/ls-l/</link>
-      <pubDate>Fri, 20 Dec 2024 15:00:29 +0900</pubDate>
-      <guid>http://localhost:33997/posts/ls-l/</guid>
-      <description>&lt;h2 id=&#34;ls--l-とは&#34;&gt;ls -l とは&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;ls -l&lt;/code&gt; は&lt;code&gt;ls&lt;/code&gt;コマンドでよく使われる形です。&lt;code&gt;-l&lt;/code&gt;オプションをつけることでファイルやディレクトリの詳細な情報を出力することができます。&lt;br&gt;
-以下は出力例です。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ls -l
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on BI BO RO KU room</title><link>https://nakatarui.github.io/posts/</link><description>Recent content in Posts on BI BO RO KU room</description><generator>Hugo -- 0.139.4</generator><language>ja-jp</language><lastBuildDate>Sat, 21 Dec 2024 14:22:33 +0900</lastBuildDate><atom:link href="https://nakatarui.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>headでランダムな大きさのファイルを作る(linux)</title><link>https://nakatarui.github.io/posts/make-random-files/</link><pubDate>Sat, 21 Dec 2024 14:22:33 +0900</pubDate><guid>https://nakatarui.github.io/posts/make-random-files/</guid><description>&lt;p>&lt;code>head&lt;/code>コマンドでランダムな大きさのファイルを作ってみます。&lt;br>
+&lt;code>/dev/random&lt;/code>を&lt;code>head&lt;/code>してその出力をリダイレクトします。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ head /dev/random &amp;gt; test
+&lt;/code>&lt;/pre>&lt;p>&lt;code>ls -l&lt;/code>でファイルサイズを見てみます。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ ls -l test
+-rw-r--r-- 1 user user 1920 Dec 21 14:58 test
+&lt;/code>&lt;/pre>&lt;p>しかし、大きさは本当にランダムになっているのでしょうか。&lt;br>
+以下のワンライナーを使ってファイルを5つ作ります。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ for i in {0..4}; do touch test$i &amp;amp;&amp;amp; head /dev/random &amp;gt; $_; done
+$ ls
+test0 test1 test2 test3 test4
+&lt;/code>&lt;/pre>&lt;p>&lt;code>ls -l&lt;/code>でファイルサイズを見てみます。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ ls -l
+total 20
+-rw-r--r-- 1 user user 2146 Dec 21 14:53 test0
+-rw-r--r-- 1 user user 2647 Dec 21 14:53 test1
+-rw-r--r-- 1 user user 3757 Dec 21 14:53 test2
+-rw-r--r-- 1 user user 2578 Dec 21 14:53 test3
+-rw-r--r-- 1 user user 2388 Dec 21 14:53 test4
+&lt;/code>&lt;/pre>&lt;p>おおよそ、2000~4000バイトくらいのファイルが作らるようですね。&lt;br>
+完全なランダムではありませんが、手頃なサイズのファイルを作ることができそうです。&lt;/p></description></item><item><title>Linuxでroot以外のログインを禁止する</title><link>https://nakatarui.github.io/posts/nologin/</link><pubDate>Fri, 20 Dec 2024 18:50:02 +0900</pubDate><guid>https://nakatarui.github.io/posts/nologin/</guid><description>&lt;h2 id="nologin5とは">nologin(5)とは&lt;/h2>
+&lt;p>Linuxでは&lt;code>/etc/nologin&lt;/code>というファイルを作成することで特権ユーザー以外のログインを禁止することができます。&lt;br>
+nologin(5)のmanページには次のようなことが書かれています。&lt;/p>
+&lt;blockquote>
+&lt;p>If the file /etc/nologin exists and is readable, login(1) will allow access only to
+root. Other users will be shown the contents of this file and their logins will be re‐
+fused. This provides a simple way of temporarily disabling all unprivileged logins.&lt;/p>
+&lt;/blockquote>
+&lt;p>要約すると&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/etc/nologin&lt;/code>が存在し読み取り可能な場合、login(1)はrootのみにアクセスを許可する。&lt;/li>
+&lt;li>他のユーザーは&lt;code>/etc/nologin&lt;/code>の内容を見ることができ、ログインは拒否される。&lt;/li>
+&lt;/ul>
+&lt;p>つまり、&lt;code>/etc/nologin&lt;/code>を作成し読み取り権限を付与すればroot以外のログインを禁止できるということです。&lt;/p>
+&lt;h2 id="実際にやってみた">実際にやってみた&lt;/h2>
+&lt;p>&lt;code>/etc/nologin&lt;/code> を作って試してみました。&lt;br>
+以下、やってわかったことのまとめです。&lt;/p>
+&lt;ul>
+&lt;li>非特権ユーザーを入力するとパスワードプロンプトが表示されるまもなくログイン拒否される。&lt;/li>
+&lt;li>&lt;code>agetty&lt;/code>などで非特権ユーザーの自動ログインを設定しているとログインできてしまう。&lt;/li>
+&lt;li>&lt;code>/etc/nologin&lt;/code>に記述した内容は下のように表示される。&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>login: user # ユーザー名入力後、エンター
+only root can access this system. # `/etc/nologin`の内容が出力される
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>root以外のログインも許可したくなったら&lt;code>/etc/nologin&lt;/code>を消すだけでOK&lt;/li>
+&lt;/ul>
+&lt;h2 id="まとめ">まとめ&lt;/h2>
+&lt;p>ファイルの作成・削除だけで機能するので簡単で良いですね。&lt;br>
+ちなみに、rootのパスワードを設定していない/忘れている 人は本当にログインできなくなってしまうので注意してください。(^_-)&lt;/p></description></item><item><title>ls -l の出力を見やすくする</title><link>https://nakatarui.github.io/posts/ls-l/</link><pubDate>Fri, 20 Dec 2024 15:00:29 +0900</pubDate><guid>https://nakatarui.github.io/posts/ls-l/</guid><description>&lt;h2 id="ls--l-とは">ls -l とは&lt;/h2>
+&lt;p>&lt;code>ls -l&lt;/code> は&lt;code>ls&lt;/code>コマンドでよく使われる形です。&lt;code>-l&lt;/code>オプションをつけることでファイルやディレクトリの詳細な情報を出力することができます。&lt;br>
+以下は出力例です。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ ls -l
 total 20
 -rw-r--r-- 1 user user 2755 Dec 20 15:08 test1
 -rw-r--r-- 1 user user 3158 Dec 20 15:08 test2
 -rw-r--r-- 1 user user 2997 Dec 20 15:08 test3
 -rw-r--r-- 1 user user 1203 Dec 20 15:08 test4
 -rw-r--r-- 1 user user 2129 Dec 20 15:08 test5
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;各行、左から順に以下ような情報が出力されています。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一番左の&lt;code&gt;-&lt;/code&gt;はファイルのタイプを示しています。(&lt;code&gt;-&lt;/code&gt;はファイルを指す)&lt;/li&gt;
-&lt;li&gt;パーミッション&lt;/li&gt;
-&lt;li&gt;ハードリンクの数(すべて&lt;code&gt;1&lt;/code&gt;となっている)&lt;/li&gt;
-&lt;li&gt;所有者名 (user)&lt;/li&gt;
-&lt;li&gt;所有グループ (user)&lt;/li&gt;
-&lt;li&gt;ファイルのサイズ(バイト単位)&lt;/li&gt;
-&lt;li&gt;最終更新日時&lt;/li&gt;
-&lt;li&gt;ファイル名&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;しかし、ファイルサイズの表示がバイト単位だと見にくいですね。  そこで、&lt;/p&gt;
-&lt;h2 id=&#34;-hオプションを使う&#34;&gt;-hオプションを使う&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;ls -lh&lt;/code&gt;とすることで人間が読みやすい(ヒューマンリーダブルな)出力をしてくれます。&lt;br&gt;
-具体的には以下のように出力することができます。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>超高速なコンパイラ「tcc」</title>
-      <link>http://localhost:33997/posts/tcc/</link>
-      <pubDate>Mon, 16 Dec 2024 21:35:37 +0900</pubDate>
-      <guid>http://localhost:33997/posts/tcc/</guid>
-      <description>&lt;h2 id=&#34;目次&#34;&gt;目次&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tcc%E3%81%A8%E3%81%AF&#34;&gt;tccとは&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E7%89%B9%E5%BE%B4&#34;&gt;特徴&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E6%AC%A0%E7%82%B9&#34;&gt;欠点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95&#34;&gt;インストール方法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E4%BD%BF%E7%94%A8%E4%BE%8B&#34;&gt;使用例&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E3%81%BE%E3%81%A8%E3%82%81&#34;&gt;まとめ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;tccとは&#34;&gt;tccとは&lt;/h2&gt;
-&lt;p&gt;&lt;img alt=&#34;tcc-runs-on-linux&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:33997/images/tcc-on-linux.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt; 
-tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。&lt;/p&gt;
-&lt;p&gt;2001年にファブリス・ベラールさんが&lt;a href=&#34;https://ja.m.wikipedia.org/wiki/IOCCC&#34; title=&#34;wikipedia:IOCCC&#34;&gt;IOCCC&lt;/a&gt;に発表したコードが原型になっています。その後、機能を拡張したものが現在のtccです。&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;非常に小さく、高速。&lt;br&gt;
-開発者のベラールさんによるとtccのコンパイル速度はgccよりも9倍高速であるそうです。&lt;br&gt;
- &lt;/li&gt;
-&lt;li&gt;オプションがgccに似ている。&lt;br&gt;
-tccのオプションはgccに非常に似ているのでgccに慣れている方でも使いやすいです。&lt;br&gt;
- &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ja.m.wikipedia.org/wiki/%E5%AE%9F%E8%A1%8C%E6%99%82%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9&#34;&gt;JITコンパイラ&lt;/a&gt;としても使える。&lt;br&gt;
-オプションをつけることでコンパイルと同時に実行することができます。  これについては後にも触れます。
- &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;欠点&#34;&gt;欠点&lt;/h2&gt;
-&lt;p&gt;tccはgccでするような(-Oオプションなどの)コンパイルの最適化ができないことが欠点というか、少し残念なポイントですね。&lt;/p&gt;
-&lt;p&gt;性能よりもコンパイラの小ささに重点をおいているためです。&lt;/p&gt;
-&lt;p&gt;とはいっても、現代のパソコンは高速なので最適化ができなくて困ることはほとんどないと思います。&lt;/p&gt;
-&lt;h2 id=&#34;インストール方法&#34;&gt;インストール方法&lt;/h2&gt;
-&lt;p&gt;debian/debian派生osでのインストール方法です。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo apt install tcc
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;公式リポジトリに配布されているので&lt;code&gt;apt&lt;/code&gt;で楽々インストールできます。&lt;/p&gt;
-&lt;p&gt;また、試していないので分かりませんがarchlinuxでも公式リポジトリに配布されているので&lt;code&gt;pacman&lt;/code&gt;を使えばインストールできると思われます。&lt;/p&gt;
-&lt;h2 id=&#34;使用例&#34;&gt;使用例&lt;/h2&gt;
-&lt;p&gt;gccとほとんど同じなので書く必要もないかもしれませんが。&lt;br&gt;
- &lt;/p&gt;
-&lt;h4 id=&#34;コンパイルしてaoutを作る&#34;&gt;コンパイルして&lt;code&gt;a.out&lt;/code&gt;を作る。&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tcc test.c
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;アウトプットファイルを指定したいときは-oオプション&#34;&gt;アウトプットファイルを指定したいときは&lt;code&gt;-o&lt;/code&gt;オプション&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tcc test.c -o test # test が作成される
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;厳格にエラーをチェックするようにするには&#34;&gt;厳格にエラーをチェックするようにするには&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tcc test.c -W
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;コンパイル時に同時に実行するjitコンパイル&#34;&gt;コンパイル時に同時に実行する(JITコンパイル)&lt;/h4&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tcc -run test.c # a.outは作成されない
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;今回はtccの紹介でした。&lt;/p&gt;
-&lt;p&gt;他のコンパイラと比べて驚くほど早いのでぜひ一度試してみてください。&lt;/p&gt;
-&lt;h3 id=&#34;参考&#34;&gt;参考:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;man&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ja.m.wikipedia.org/wiki/Tiny_C_Compiler&#34;&gt;Wikipedia&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>mkdirで作ったディレクトリに、素早くcdする</title>
-      <link>http://localhost:33997/posts/mkdir-cd/</link>
-      <pubDate>Sat, 14 Dec 2024 21:49:10 +0900</pubDate>
-      <guid>http://localhost:33997/posts/mkdir-cd/</guid>
-      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;mkdirしたディレクトリに即座に移動したいとき、どうしてますか?&lt;br&gt;
-今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。&lt;/p&gt;
-&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Debian 12&lt;/li&gt;
-&lt;li&gt;bash 5&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;本題&#34;&gt;本題&lt;/h2&gt;
-&lt;p&gt;では、早速本題のコマンドを見ていきましょう。&lt;br&gt;
-以下がコマンド例です。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ mkdir test.d;cd $_
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;test.d&lt;/code&gt;を&lt;code&gt;mkdir&lt;/code&gt;し、&lt;code&gt;enter&lt;/code&gt;もせず、記号&lt;code&gt;;&lt;/code&gt;を挟んですぐに&lt;code&gt;cd&lt;/code&gt;していますね。&lt;br&gt;
-後に解説しますが、&lt;code&gt;;&lt;/code&gt;を使うことで改行することなく、更に&lt;code&gt;$_&lt;/code&gt;を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。&lt;/p&gt;
-&lt;h2 id=&#34;解説&#34;&gt;解説&lt;/h2&gt;
-&lt;p&gt;左から順に、コマンドごとに解説していきます。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;mkdir test.d&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;これはそのままの意味です。&lt;code&gt;test.d&lt;/code&gt;というディレクトリを作ります。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;;&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;;&lt;/code&gt;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。
-上の場合、mkdirの実行結果に関わらず、cdを実行します。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd $_&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;bashでは&lt;code&gt;$_&lt;/code&gt;は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、&lt;code&gt;$_&lt;/code&gt;は&lt;code&gt;test.d&lt;/code&gt;に展開されます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;所感&#34;&gt;所感&lt;/h2&gt;
-&lt;p&gt;bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。&lt;/p&gt;
-&lt;p&gt;参考:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;man&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title>
-      <link>http://localhost:33997/posts/decompress-commands/</link>
-      <pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate>
-      <guid>http://localhost:33997/posts/decompress-commands/</guid>
-      <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br&gt;
-展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p&gt;
-&lt;h2 id=&#34;目次&#34;&gt;目次&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#tar&#34;&gt;tar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#xz&#34;&gt;xz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#zip&#34;&gt;zip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#gzip&#34;&gt;gzip&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#bzip2&#34;&gt;bzip2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;tar&#34;&gt;tar&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;xz&#34;&gt;xz&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ xz -d archive.xz  # -d はdecompress(展開の意味)の頭文字
+&lt;/code>&lt;/pre>&lt;p>各行、左から順に以下ような情報が出力されています。&lt;/p>
+&lt;ul>
+&lt;li>一番左の&lt;code>-&lt;/code>はファイルのタイプを示しています。(&lt;code>-&lt;/code>はファイルを指す)&lt;/li>
+&lt;li>パーミッション&lt;/li>
+&lt;li>ハードリンクの数(すべて&lt;code>1&lt;/code>となっている)&lt;/li>
+&lt;li>所有者名 (user)&lt;/li>
+&lt;li>所有グループ (user)&lt;/li>
+&lt;li>ファイルのサイズ(バイト単位)&lt;/li>
+&lt;li>最終更新日時&lt;/li>
+&lt;li>ファイル名&lt;/li>
+&lt;/ul>
+&lt;p>しかし、ファイルサイズの表示がバイト単位だと見にくいですね。 そこで、&lt;/p>
+&lt;h2 id="-hオプションを使う">-hオプションを使う&lt;/h2>
+&lt;p>&lt;code>ls -lh&lt;/code>とすることで人間が読みやすい(ヒューマンリーダブルな)出力をしてくれます。&lt;br>
+具体的には以下のように出力することができます。&lt;/p></description></item><item><title>超高速なコンパイラ「tcc」</title><link>https://nakatarui.github.io/posts/tcc/</link><pubDate>Mon, 16 Dec 2024 21:35:37 +0900</pubDate><guid>https://nakatarui.github.io/posts/tcc/</guid><description>&lt;h2 id="目次">目次&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#tcc%E3%81%A8%E3%81%AF">tccとは&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%89%B9%E5%BE%B4">特徴&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%AC%A0%E7%82%B9">欠点&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95">インストール方法&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E4%BD%BF%E7%94%A8%E4%BE%8B">使用例&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="tccとは">tccとは&lt;/h2>
+&lt;p>&lt;img alt="tcc-runs-on-linux" loading="lazy" src="https://nakatarui.github.io/images/tcc-on-linux.png">&lt;/p>
+&lt;p> 
+tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。&lt;/p>
+&lt;p>2001年にファブリス・ベラールさんが&lt;a href="https://ja.m.wikipedia.org/wiki/IOCCC" title="wikipedia:IOCCC">IOCCC&lt;/a>に発表したコードが原型になっています。その後、機能を拡張したものが現在のtccです。&lt;/p>
+&lt;h2 id="特徴">特徴&lt;/h2>
+&lt;ul>
+&lt;li>非常に小さく、高速。&lt;br>
+開発者のベラールさんによるとtccのコンパイル速度はgccよりも9倍高速であるそうです。&lt;br>
+ &lt;/li>
+&lt;li>オプションがgccに似ている。&lt;br>
+tccのオプションはgccに非常に似ているのでgccに慣れている方でも使いやすいです。&lt;br>
+ &lt;/li>
+&lt;li>&lt;a href="https://ja.m.wikipedia.org/wiki/%E5%AE%9F%E8%A1%8C%E6%99%82%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9">JITコンパイラ&lt;/a>としても使える。&lt;br>
+オプションをつけることでコンパイルと同時に実行することができます。 これについては後にも触れます。
+ &lt;/li>
+&lt;/ul>
+&lt;h2 id="欠点">欠点&lt;/h2>
+&lt;p>tccはgccでするような(-Oオプションなどの)コンパイルの最適化ができないことが欠点というか、少し残念なポイントですね。&lt;/p>
+&lt;p>性能よりもコンパイラの小ささに重点をおいているためです。&lt;/p>
+&lt;p>とはいっても、現代のパソコンは高速なので最適化ができなくて困ることはほとんどないと思います。&lt;/p>
+&lt;h2 id="インストール方法">インストール方法&lt;/h2>
+&lt;p>debian/debian派生osでのインストール方法です。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ sudo apt install tcc
+&lt;/code>&lt;/pre>&lt;p>公式リポジトリに配布されているので&lt;code>apt&lt;/code>で楽々インストールできます。&lt;/p>
+&lt;p>また、試していないので分かりませんがarchlinuxでも公式リポジトリに配布されているので&lt;code>pacman&lt;/code>を使えばインストールできると思われます。&lt;/p>
+&lt;h2 id="使用例">使用例&lt;/h2>
+&lt;p>gccとほとんど同じなので書く必要もないかもしれませんが。&lt;br>
+ &lt;/p>
+&lt;h4 id="コンパイルしてaoutを作る">コンパイルして&lt;code>a.out&lt;/code>を作る。&lt;/h4>
+&lt;pre tabindex="0">&lt;code>$ tcc test.c
+&lt;/code>&lt;/pre>&lt;h4 id="アウトプットファイルを指定したいときは-oオプション">アウトプットファイルを指定したいときは&lt;code>-o&lt;/code>オプション&lt;/h4>
+&lt;pre tabindex="0">&lt;code>$ tcc test.c -o test # test が作成される
+&lt;/code>&lt;/pre>&lt;h4 id="厳格にエラーをチェックするようにするには">厳格にエラーをチェックするようにするには&lt;/h4>
+&lt;pre tabindex="0">&lt;code>$ tcc test.c -W
+&lt;/code>&lt;/pre>&lt;h4 id="コンパイル時に同時に実行するjitコンパイル">コンパイル時に同時に実行する(JITコンパイル)&lt;/h4>
+&lt;pre tabindex="0">&lt;code>$ tcc -run test.c # a.outは作成されない
+&lt;/code>&lt;/pre>&lt;h2 id="まとめ">まとめ&lt;/h2>
+&lt;p>今回はtccの紹介でした。&lt;/p>
+&lt;p>他のコンパイラと比べて驚くほど早いのでぜひ一度試してみてください。&lt;/p>
+&lt;h3 id="参考">参考:&lt;/h3>
+&lt;ul>
+&lt;li>man&lt;/li>
+&lt;li>&lt;a href="https://ja.m.wikipedia.org/wiki/Tiny_C_Compiler">Wikipedia&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>mkdirで作ったディレクトリに、素早くcdする</title><link>https://nakatarui.github.io/posts/mkdir-cd/</link><pubDate>Sat, 14 Dec 2024 21:49:10 +0900</pubDate><guid>https://nakatarui.github.io/posts/mkdir-cd/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
+&lt;p>mkdirしたディレクトリに即座に移動したいとき、どうしてますか?&lt;br>
+今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。&lt;/p>
+&lt;h2 id="環境">環境&lt;/h2>
+&lt;ul>
+&lt;li>Debian 12&lt;/li>
+&lt;li>bash 5&lt;/li>
+&lt;/ul>
+&lt;h2 id="本題">本題&lt;/h2>
+&lt;p>では、早速本題のコマンドを見ていきましょう。&lt;br>
+以下がコマンド例です。&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ mkdir test.d;cd $_
+&lt;/code>&lt;/pre>&lt;p>&lt;code>test.d&lt;/code>を&lt;code>mkdir&lt;/code>し、&lt;code>enter&lt;/code>もせず、記号&lt;code>;&lt;/code>を挟んですぐに&lt;code>cd&lt;/code>していますね。&lt;br>
+後に解説しますが、&lt;code>;&lt;/code>を使うことで改行することなく、更に&lt;code>$_&lt;/code>を使うことで作ったディレクトリの名前を入力することもなく実行できるんです。&lt;/p>
+&lt;h2 id="解説">解説&lt;/h2>
+&lt;p>左から順に、コマンドごとに解説していきます。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>mkdir test.d&lt;/code>
+&lt;ul>
+&lt;li>これはそのままの意味です。&lt;code>test.d&lt;/code>というディレクトリを作ります。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>;&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>;&lt;/code>はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。
+上の場合、mkdirの実行結果に関わらず、cdを実行します。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>cd $_&lt;/code>
+&lt;ul>
+&lt;li>bashでは&lt;code>$_&lt;/code>は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、&lt;code>$_&lt;/code>は&lt;code>test.d&lt;/code>に展開されます。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="所感">所感&lt;/h2>
+&lt;p>bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。&lt;/p>
+&lt;p>参考:&lt;/p>
+&lt;ul>
+&lt;li>man&lt;/li>
+&lt;/ul></description></item><item><title>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</title><link>https://nakatarui.github.io/posts/decompress-commands/</link><pubDate>Wed, 11 Dec 2024 20:51:15 +0900</pubDate><guid>https://nakatarui.github.io/posts/decompress-commands/</guid><description>&lt;h2 id="はじめに">はじめに&lt;/h2>
+&lt;p>どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。&lt;br>
+展開方法のみ書きましたので詳しい使い方はmanをみてください。&lt;/p>
+&lt;h2 id="目次">目次&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="#tar">tar&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#xz">xz&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#zip">zip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#gzip">gzip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bzip2">bzip2&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="tar">tar&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする
+&lt;/code>&lt;/pre>&lt;h2 id="xz">xz&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ xz -d archive.xz # -d はdecompress(展開の意味)の頭文字
 または
 $ unxz archive.xz
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;zip&#34;&gt;zip&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ unzip archive.zip
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;gzip&#34;&gt;gzip&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ gzip -d archive.gzip
+&lt;/code>&lt;/pre>&lt;h2 id="zip">zip&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ unzip archive.zip
+&lt;/code>&lt;/pre>&lt;h2 id="gzip">gzip&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ gzip -d archive.gzip
 または
 $ gunzip archive.gzip
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;bzip2&#34;&gt;bzip2&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ bzip2 -d archive.bz2
-&lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    <item>
-      <title>「Nitter」は今でも使えるの？2024/12月</title>
-      <link>http://localhost:33997/posts/nitter/</link>
-      <pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate>
-      <guid>http://localhost:33997/posts/nitter/</guid>
-      <description>&lt;p&gt;こんにちは。&lt;br&gt;
-Nitterはまだ使えるのか? そもそもNitterとは何なのか?&lt;br&gt;
-まとめました。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Linuxで特定のサイトへのアクセスを禁止する方法</title>
-      <link>http://localhost:33997/posts/hosts/</link>
-      <pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate>
-      <guid>http://localhost:33997/posts/hosts/</guid>
-      <description>&lt;p&gt;今回はLinuxで特定サイトへのアクセスを禁止する方法
-を紹介していきます。&lt;br&gt;
-Linuxには&lt;code&gt;/etc/hosts&lt;/code&gt;というファイルがあります。&lt;code&gt;/etc/hosts&lt;/code&gt;は名前解決の設定をできるファイルで、&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;/code>&lt;/pre>&lt;h2 id="bzip2">bzip2&lt;/h2>
+&lt;pre tabindex="0">&lt;code>$ bzip2 -d archive.bz2
+&lt;/code>&lt;/pre></description></item><item><title>「Nitter」は今でも使えるの？2024/12月</title><link>https://nakatarui.github.io/posts/nitter/</link><pubDate>Mon, 09 Dec 2024 09:11:22 +0900</pubDate><guid>https://nakatarui.github.io/posts/nitter/</guid><description>&lt;p>こんにちは。&lt;br>
+Nitterはまだ使えるのか? そもそもNitterとは何なのか?&lt;br>
+まとめました。&lt;/p></description></item><item><title>Linuxで特定のサイトへのアクセスを禁止する方法</title><link>https://nakatarui.github.io/posts/hosts/</link><pubDate>Sun, 08 Dec 2024 12:15:51 +0900</pubDate><guid>https://nakatarui.github.io/posts/hosts/</guid><description>&lt;p>今回はLinuxで特定サイトへのアクセスを禁止する方法
+を紹介していきます。&lt;br>
+Linuxには&lt;code>/etc/hosts&lt;/code>というファイルがあります。&lt;code>/etc/hosts&lt;/code>は名前解決の設定をできるファイルで、&lt;/p></description></item></channel></rss>
