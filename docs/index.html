@@ -1,20 +1,176 @@
-<!doctype html><html lang=en dir=auto><head><meta name=generator content="Hugo 0.139.4"><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>BI BO RO KU room</title>
-<meta name=description content><meta name=author content><link rel=canonical href=https://nakatarui.github.io/><link crossorigin=anonymous href=/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as=style><link rel=icon href=https://nakatarui.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://nakatarui.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://nakatarui.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://nakatarui.github.io/apple-touch-icon.png><link rel=mask-icon href=https://nakatarui.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://nakatarui.github.io/index.xml><link rel=alternate hreflang=en href=https://nakatarui.github.io/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta property="og:url" content="https://nakatarui.github.io/"><meta property="og:site_name" content="BI BO RO KU room"><meta property="og:title" content="BI BO RO KU room"><meta property="og:locale" content="ja-jp"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="BI BO RO KU room"><meta name=twitter:description content><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"BI BO RO KU room","url":"https://nakatarui.github.io/","description":"","logo":"https://nakatarui.github.io/favicon.ico","sameAs":[]}</script></head><body class="list dark" id=top><script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://nakatarui.github.io/ accesskey=h title="BI BO RO KU room (Alt + H)">BI BO RO KU room</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://github.com/nakatarui title=Github><span>Github</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><article class=first-entry><header class=entry-header><h2 class=entry-hint-parent>Linuxでroot以外のログインを禁止する</h2></header><div class=entry-content><p>nologin(5)とは Linuxでは/etc/nologinというファイルを作成することで特権ユーザー以外のログインを禁止することができます。
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.139.4"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=33997&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>BI BO RO KU room</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:33997/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:33997/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:33997/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:33997/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:33997/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:33997/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:33997/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:33997/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:33997/">
+  <meta property="og:site_name" content="BI BO RO KU room">
+  <meta property="og:title" content="BI BO RO KU room">
+  <meta property="og:locale" content="ja-jp">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BI BO RO KU room">
+<meta name="twitter:description" content="">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BI BO RO KU room",
+  "url": "http://localhost:33997/",
+  "description": "",
+  "logo": "http://localhost:33997/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+
+<body class="list dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:33997/" accesskey="h" title="BI BO RO KU room (Alt + H)">BI BO RO KU room</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://github.com/nakatarui" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="first-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">headでランダムな大きさのファイルを作る(linux)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>headコマンドでランダムな大きさのファイルを作ってみます。
+/dev/randomをheadしてその出力をリダイレクトします。
+$ head /dev/random &gt; test ls -lでファイルサイズを見てみます。
+$ ls -l test -rw-r--r-- 1 user user 1920 Dec 21 14:58 test しかし、大きさは本当にランダムになっているのでしょうか。
+以下のワンライナーを使ってファイルを5つ作ります。
+$ for i in {0..4}; do touch test$i &amp;&amp; head /dev/random &gt; $_; done $ ls test0 test1 test2 test3 test4 ls -lでファイルサイズを見てみます。
+$ ls -l total 20 -rw-r--r-- 1 user user 2146 Dec 21 14:53 test0 -rw-r--r-- 1 user user 2647 Dec 21 14:53 test1 -rw-r--r-- 1 user user 3757 Dec 21 14:53 test2 -rw-r--r-- 1 user user 2578 Dec 21 14:53 test3 -rw-r--r-- 1 user user 2388 Dec 21 14:53 test4 おおよそ、2000~4000バイトくらいのファイルが作らるようですね。
+完全なランダムではありませんが、手頃なサイズのファイルを作ることができそうです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-21 14:22:33 +0900 JST'>December 21, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to headでランダムな大きさのファイルを作る(linux)" href="http://localhost:33997/posts/make-random-files/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Linuxでroot以外のログインを禁止する
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>nologin(5)とは Linuxでは/etc/nologinというファイルを作成することで特権ユーザー以外のログインを禁止することができます。
 nologin(5)のmanページには次のようなことが書かれています。
 If the file /etc/nologin exists and is readable, login(1) will allow access only to root. Other users will be shown the contents of this file and their logins will be re‐ fused. This provides a simple way of temporarily disabling all unprivileged logins.
 要約すると
 /etc/nologinが存在し読み取り可能な場合、login(1)はrootのみにアクセスを許可する。 他のユーザーは/etc/nologinの内容を見ることができ、ログインは拒否される。 つまり、/etc/nologinを作成し読み取り権限を付与すればroot以外のログインを禁止できるということです。
 実際にやってみた /etc/nologin を作って試してみました。
 以下、やってわかったことのまとめです。
-非特権ユーザーを入力するとパスワードプロンプトが表示されるまもなくログイン拒否される。 agettyなどで非特権ユーザーの自動ログインを設定しているとログインできてしまう。 /etc/nologinに記述した内容は下のように表示される。 login: user # ユーザー名入力後、エンター only root can access this system. # `/etc/nologin`の内容が出力される root以外のログインも許可したくなったら/etc/nologinを消すだけでOK まとめ ファイルの作成・削除だけで機能するので簡単で良いですね。
+非特権ユーザーを入力するとパスワードプロンプトが表示されるまもなくログイン拒否される。 agettyなどで非特権ユーザーの自動ログインを設定しているとログインできてしまう。 /etc/nologinに記述した内容は下のように表示される。 login: user	# ユーザー名入力後、エンター only root can access this system.	# `/etc/nologin`の内容が出力される root以外のログインも許可したくなったら/etc/nologinを消すだけでOK まとめ ファイルの作成・削除だけで機能するので簡単で良いですね。
 ちなみに、rootのパスワードを設定していない/忘れている 人は本当にログインできなくなってしまうので注意してください。(^_-)
-...</p></div><footer class=entry-footer><span title='2024-12-20 18:50:02 +0900 JST'>December 20, 2024</span></footer><a class=entry-link aria-label="post link to Linuxでroot以外のログインを禁止する" href=https://nakatarui.github.io/posts/nologin/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>ls -l の出力を見やすくする</h2></header><div class=entry-content><p>ls -l とは ls -l はlsコマンドでよく使われる形です。-lオプションをつけることでファイルやディレクトリの詳細な情報を出力することができます。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-20 18:50:02 +0900 JST'>December 20, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Linuxでroot以外のログインを禁止する" href="http://localhost:33997/posts/nologin/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ls -l の出力を見やすくする
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>ls -l とは ls -l はlsコマンドでよく使われる形です。-lオプションをつけることでファイルやディレクトリの詳細な情報を出力することができます。
 以下は出力例です。
 $ ls -l total 20 -rw-r--r-- 1 user user 2755 Dec 20 15:08 test1 -rw-r--r-- 1 user user 3158 Dec 20 15:08 test2 -rw-r--r-- 1 user user 2997 Dec 20 15:08 test3 -rw-r--r-- 1 user user 1203 Dec 20 15:08 test4 -rw-r--r-- 1 user user 2129 Dec 20 15:08 test5 各行、左から順に以下ような情報が出力されています。
 一番左の-はファイルのタイプを示しています。(-はファイルを指す) パーミッション ハードリンクの数(すべて1となっている) 所有者名 (user) 所有グループ (user) ファイルのサイズ(バイト単位) 最終更新日時 ファイル名 しかし、ファイルサイズの表示がバイト単位だと見にくいですね。 そこで、
 -hオプションを使う ls -lhとすることで人間が読みやすい(ヒューマンリーダブルな)出力をしてくれます。
 具体的には以下のように出力することができます。
-...</p></div><footer class=entry-footer><span title='2024-12-20 15:00:29 +0900 JST'>December 20, 2024</span></footer><a class=entry-link aria-label="post link to ls -l の出力を見やすくする" href=https://nakatarui.github.io/posts/ls-l/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>超高速なコンパイラ「tcc」</h2></header><div class=entry-content><p>目次 tccとは 特徴 欠点 インストール方法 使用例 まとめ tccとは tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-20 15:00:29 +0900 JST'>December 20, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to ls -l の出力を見やすくする" href="http://localhost:33997/posts/ls-l/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">超高速なコンパイラ「tcc」
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目次 tccとは 特徴 欠点 インストール方法 使用例 まとめ tccとは tcc(Tiny C Compiler) はその名の通りとても小さく、高速なcコンパイラです。
 2001年にファブリス・ベラールさんがIOCCCに発表したコードが原型になっています。その後、機能を拡張したものが現在のtccです。
 特徴 非常に小さく、高速。
 開発者のベラールさんによるとtccのコンパイル速度はgccよりも9倍高速であるそうです。
@@ -30,7 +186,19 @@ $ sudo apt install tcc 公式リポジトリに配布されているのでaptで
 使用例 gccとほとんど同じなので書く必要もないかもしれませんが。
 コンパイルしてa.outを作る。 $ tcc test.c アウトプットファイルを指定したいときは-oオプション $ tcc test.c -o test # test が作成される 厳格にエラーをチェックするようにするには $ tcc test.c -W コンパイル時に同時に実行する(JITコンパイル) $ tcc -run test.c # a.outは作成されない まとめ 今回はtccの紹介でした。
 他のコンパイラと比べて驚くほど早いのでぜひ一度試してみてください。
-参考: man Wikipedia</p></div><footer class=entry-footer><span title='2024-12-16 21:35:37 +0900 JST'>December 16, 2024</span></footer><a class=entry-link aria-label="post link to 超高速なコンパイラ「tcc」" href=https://nakatarui.github.io/posts/tcc/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>mkdirで作ったディレクトリに、素早くcdする</h2></header><div class=entry-content><p>はじめに mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
+参考: man Wikipedia </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-16 21:35:37 +0900 JST'>December 16, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to 超高速なコンパイラ「tcc」" href="http://localhost:33997/posts/tcc/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">mkdirで作ったディレクトリに、素早くcdする
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>はじめに mkdirしたディレクトリに即座に移動したいとき、どうしてますか?
 今回はshellの特殊変数と演算子を使って素早くcdする方法を紹介します。
 環境 Debian 12 bash 5 本題 では、早速本題のコマンドを見ていきましょう。
 以下がコマンド例です。
@@ -39,15 +207,125 @@ $ mkdir test.d;cd $_ test.dをmkdirし、enterもせず、記号;を挟んです
 解説 左から順に、コマンドごとに解説していきます。
 mkdir test.d これはそのままの意味です。test.dというディレクトリを作ります。 ; ;はコマンドを立て続けに実行できる記号です。直前のコマンドの実行結果を無視して次のコマンドを実行します。 上の場合、mkdirの実行結果に関わらず、cdを実行します。 cd $_ bashでは$_は特殊変数として扱われ、直前のコマンドの最後の引数が入ります。上の例では、$_はtest.dに展開されます。 所感 bashには色々な特殊変数や演算子があります。それらを駆使して効率の良い操作をしていきたいですね。
 参考:
-man</p></div><footer class=entry-footer><span title='2024-12-14 21:49:10 +0900 JST'>December 14, 2024</span></footer><a class=entry-link aria-label="post link to mkdirで作ったディレクトリに、素早くcdする" href=https://nakatarui.github.io/posts/mkdir-cd/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法</h2></header><div class=entry-content><p>はじめに どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。
+man </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-14 21:49:10 +0900 JST'>December 14, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to mkdirで作ったディレクトリに、素早くcdする" href="http://localhost:33997/posts/mkdir-cd/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>はじめに どれもよく使うファイル形式ですが、展開方法をよく忘れてしまうのでこの機会にまとめました。
 展開方法のみ書きましたので詳しい使い方はmanをみてください。
-目次 tar xz zip gzip bzip2 tar $ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする xz $ xz -d archive.xz # -d はdecompress(展開の意味)の頭文字 または $ unxz archive.xz zip $ unzip archive.zip gzip $ gzip -d archive.gzip または $ gunzip archive.gzip bzip2 $ bzip2 -d archive.bz2</p></div><footer class=entry-footer><span title='2024-12-11 20:51:15 +0900 JST'>December 11, 2024</span></footer><a class=entry-link aria-label="post link to Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法" href=https://nakatarui.github.io/posts/decompress-commands/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>「Nitter」は今でも使えるの？2024/12月</h2></header><div class=entry-content><p>こんにちは。
+目次 tar xz zip gzip bzip2 tar $ tar -xf archive.tar # -f でファイル名 archive.tar を指定し、 -x で展開をする xz $ xz -d archive.xz # -d はdecompress(展開の意味)の頭文字 または $ unxz archive.xz zip $ unzip archive.zip gzip $ gzip -d archive.gzip または $ gunzip archive.gzip bzip2 $ bzip2 -d archive.bz2 </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-11 20:51:15 +0900 JST'>December 11, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Linuxコマンドで tar, xz, zip, gzip, bzip2 形式のファイルの展開する方法" href="http://localhost:33997/posts/decompress-commands/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">「Nitter」は今でも使えるの？2024/12月
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>こんにちは。
 Nitterはまだ使えるのか? そもそもNitterとは何なのか?
 まとめました。
-...</p></div><footer class=entry-footer><span title='2024-12-09 09:11:22 +0900 JST'>December 9, 2024</span></footer><a class=entry-link aria-label="post link to 「Nitter」は今でも使えるの？2024/12月" href=https://nakatarui.github.io/posts/nitter/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>Linuxで特定のサイトへのアクセスを禁止する方法</h2></header><div class=entry-content><p>今回はLinuxで特定サイトへのアクセスを禁止する方法 を紹介していきます。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-09 09:11:22 +0900 JST'>December 9, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to 「Nitter」は今でも使えるの？2024/12月" href="http://localhost:33997/posts/nitter/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Linuxで特定のサイトへのアクセスを禁止する方法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今回はLinuxで特定サイトへのアクセスを禁止する方法 を紹介していきます。
 Linuxには/etc/hostsというファイルがあります。/etc/hostsは名前解決の設定をできるファイルで、
-...</p></div><footer class=entry-footer><span title='2024-12-08 12:15:51 +0900 JST'>December 8, 2024</span></footer><a class=entry-link aria-label="post link to Linuxで特定のサイトへのアクセスを禁止する方法" href=https://nakatarui.github.io/posts/hosts/></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://nakatarui.github.io/>BI BO RO KU room</a></span> ·
-<span>Powered by
-<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-12-08 12:15:51 +0900 JST'>December 8, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Linuxで特定のサイトへのアクセスを禁止する方法" href="http://localhost:33997/posts/hosts/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:33997/">BI BO RO KU room</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
